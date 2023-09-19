@@ -14,7 +14,7 @@ namespace SICXE_DeanHernandez
         String Archivo;
         List<String> codigo;
         public static List<string> ListaErrores = new List<string>();
-        //Dictionary<string, string> TabSim;
+        Dictionary<String, String> TabSim;
         public static List<int> selected_error;
 
 
