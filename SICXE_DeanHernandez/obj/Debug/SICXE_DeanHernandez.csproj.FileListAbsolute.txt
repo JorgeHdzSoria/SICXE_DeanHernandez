@@ -1,0 +1,76 @@
+C:\Users\LePotato\source\repos\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.exe.config
+C:\Users\LePotato\source\repos\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.exe
+C:\Users\LePotato\source\repos\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.pdb
+C:\Users\LePotato\source\repos\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csprojAssemblyReference.cache
+C:\Users\LePotato\source\repos\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.SICXE.resources
+C:\Users\LePotato\source\repos\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.Properties.Resources.resources
+C:\Users\LePotato\source\repos\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.GenerateResource.cache
+C:\Users\LePotato\source\repos\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.CoreCompileInputs.cache
+C:\Users\LePotato\source\repos\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.exe
+C:\Users\LePotato\source\repos\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.pdb
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.SICXE.resources
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.Properties.Resources.resources
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.GenerateResource.cache
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.CoreCompileInputs.cache
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.exe
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.pdb
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.exe.config
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.exe
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.pdb
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaLexer.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaParser.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaListener.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaBaseListener.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaVisitor.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaBaseVisitor.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.Antlr4GeneratedCodeFileListAbsolute.txt
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr3.Runtime.dll
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr4.Runtime.dll
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr3.Runtime.pdb
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr4.Runtime.xml
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.CopyComplete
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csprojAssemblyReference.cache
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.exe.config
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.exe
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.pdb
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr3.Runtime.dll
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr4.Runtime.dll
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr3.Runtime.pdb
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr4.Runtime.xml
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csprojAssemblyReference.cache
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaLexer.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaParser.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaListener.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaBaseListener.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaVisitor.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaBaseVisitor.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.Antlr4GeneratedCodeFileListAbsolute.txt
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.SICXE.resources
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.Properties.Resources.resources
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.GenerateResource.cache
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.CoreCompileInputs.cache
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.CopyComplete
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.exe
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac2 Reciente\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.pdb
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.exe.config
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.exe
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.pdb
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr3.Runtime.dll
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr4.Runtime.dll
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr3.Runtime.pdb
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr4.Runtime.xml
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaLexer.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaParser.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaListener.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaBaseListener.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaVisitor.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaBaseVisitor.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.Antlr4GeneratedCodeFileListAbsolute.txt
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.SICXE.resources
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.Properties.Resources.resources
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.GenerateResource.cache
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.CoreCompileInputs.cache
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.CopyComplete
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.exe
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.pdb
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csprojAssemblyReference.cache
