@@ -1,1 +1,2 @@
-.vs
+#ignorar carpeta .vs
+.vs/
