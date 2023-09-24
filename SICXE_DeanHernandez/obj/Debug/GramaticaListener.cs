@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\Gramatica.g4 by ANTLR 4.6.6
+// Generated from E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\Gramatica.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -65,17 +65,6 @@ public interface IGramaticaListener : IParseTreeListener {
 	void ExitFin([NotNull] GramaticaParser.FinContext context);
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="GramaticaParser.entrada"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterEntrada([NotNull] GramaticaParser.EntradaContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="GramaticaParser.entrada"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitEntrada([NotNull] GramaticaParser.EntradaContext context);
-
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="GramaticaParser.proposiciones"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -98,15 +87,15 @@ public interface IGramaticaListener : IParseTreeListener {
 	void ExitProposicion([NotNull] GramaticaParser.ProposicionContext context);
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="GramaticaParser.instruccion"/>.
+	/// Enter a parse tree produced by <see cref="GramaticaParser.saltoLinea"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterInstruccion([NotNull] GramaticaParser.InstruccionContext context);
+	void EnterSaltoLinea([NotNull] GramaticaParser.SaltoLineaContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="GramaticaParser.instruccion"/>.
+	/// Exit a parse tree produced by <see cref="GramaticaParser.saltoLinea"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitInstruccion([NotNull] GramaticaParser.InstruccionContext context);
+	void ExitSaltoLinea([NotNull] GramaticaParser.SaltoLineaContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="GramaticaParser.directiva"/>.
@@ -131,15 +120,70 @@ public interface IGramaticaListener : IParseTreeListener {
 	void ExitTipodirectiva([NotNull] GramaticaParser.TipodirectivaContext context);
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="GramaticaParser.etiqueta"/>.
+	/// Enter a parse tree produced by <see cref="GramaticaParser.byte"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterEtiqueta([NotNull] GramaticaParser.EtiquetaContext context);
+	void EnterByte([NotNull] GramaticaParser.ByteContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="GramaticaParser.etiqueta"/>.
+	/// Exit a parse tree produced by <see cref="GramaticaParser.byte"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitEtiqueta([NotNull] GramaticaParser.EtiquetaContext context);
+	void ExitByte([NotNull] GramaticaParser.ByteContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="GramaticaParser.word"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterWord([NotNull] GramaticaParser.WordContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="GramaticaParser.word"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitWord([NotNull] GramaticaParser.WordContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="GramaticaParser.resb"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterResb([NotNull] GramaticaParser.ResbContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="GramaticaParser.resb"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitResb([NotNull] GramaticaParser.ResbContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="GramaticaParser.resw"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterResw([NotNull] GramaticaParser.ReswContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="GramaticaParser.resw"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitResw([NotNull] GramaticaParser.ReswContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="GramaticaParser.base"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBase([NotNull] GramaticaParser.BaseContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="GramaticaParser.base"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBase([NotNull] GramaticaParser.BaseContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="GramaticaParser.instruccion"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterInstruccion([NotNull] GramaticaParser.InstruccionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="GramaticaParser.instruccion"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitInstruccion([NotNull] GramaticaParser.InstruccionContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="GramaticaParser.formato"/>.
@@ -197,17 +241,6 @@ public interface IGramaticaListener : IParseTreeListener {
 	void ExitF4([NotNull] GramaticaParser.F4Context context);
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="GramaticaParser.indexado"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterIndexado([NotNull] GramaticaParser.IndexadoContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="GramaticaParser.indexado"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitIndexado([NotNull] GramaticaParser.IndexadoContext context);
-
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="GramaticaParser.simple3"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -241,15 +274,37 @@ public interface IGramaticaListener : IParseTreeListener {
 	void ExitInmediato3([NotNull] GramaticaParser.Inmediato3Context context);
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="GramaticaParser.opdirectiva"/>.
+	/// Enter a parse tree produced by <see cref="GramaticaParser.simple4"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterOpdirectiva([NotNull] GramaticaParser.OpdirectivaContext context);
+	void EnterSimple4([NotNull] GramaticaParser.Simple4Context context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="GramaticaParser.opdirectiva"/>.
+	/// Exit a parse tree produced by <see cref="GramaticaParser.simple4"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitOpdirectiva([NotNull] GramaticaParser.OpdirectivaContext context);
+	void ExitSimple4([NotNull] GramaticaParser.Simple4Context context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="GramaticaParser.indirecto4"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterIndirecto4([NotNull] GramaticaParser.Indirecto4Context context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="GramaticaParser.indirecto4"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitIndirecto4([NotNull] GramaticaParser.Indirecto4Context context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="GramaticaParser.inmediato4"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterInmediato4([NotNull] GramaticaParser.Inmediato4Context context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="GramaticaParser.inmediato4"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitInmediato4([NotNull] GramaticaParser.Inmediato4Context context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="GramaticaParser.num"/>.
@@ -263,14 +318,36 @@ public interface IGramaticaListener : IParseTreeListener {
 	void ExitNum([NotNull] GramaticaParser.NumContext context);
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="GramaticaParser.compileUnit"/>.
+	/// Enter a parse tree produced by <see cref="GramaticaParser.etiqueta"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterCompileUnit([NotNull] GramaticaParser.CompileUnitContext context);
+	void EnterEtiqueta([NotNull] GramaticaParser.EtiquetaContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="GramaticaParser.compileUnit"/>.
+	/// Exit a parse tree produced by <see cref="GramaticaParser.etiqueta"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitCompileUnit([NotNull] GramaticaParser.CompileUnitContext context);
+	void ExitEtiqueta([NotNull] GramaticaParser.EtiquetaContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="GramaticaParser.const"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterConst([NotNull] GramaticaParser.ConstContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="GramaticaParser.const"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitConst([NotNull] GramaticaParser.ConstContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="GramaticaParser.reg"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterReg([NotNull] GramaticaParser.RegContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="GramaticaParser.reg"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitReg([NotNull] GramaticaParser.RegContext context);
 }
 } // namespace SICXE_DeanHernandez

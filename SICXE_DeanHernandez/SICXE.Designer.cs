@@ -39,11 +39,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Simbolo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dGV_int = new System.Windows.Forms.DataGridView();
             this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Formato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,13 +48,16 @@
             this.INS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OPER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MODO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dGV_Sim = new System.Windows.Forms.DataGridView();
+            this.Simbolo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_int)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_Sim)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -154,9 +154,9 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Controls.Add(this.dGV_int);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.dGV_Sim);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -165,44 +165,21 @@
             this.tabPage2.Text = "Entrega 3";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // label2
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Simbolo,
-            this.Direccion});
-            this.dataGridView1.Location = new System.Drawing.Point(7, 34);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(243, 364);
-            this.dataGridView1.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(509, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Archivo Intermedio";
             // 
-            // Simbolo
+            // dGV_int
             // 
-            this.Simbolo.HeaderText = "Símbolo";
-            this.Simbolo.Name = "Simbolo";
-            this.Simbolo.ReadOnly = true;
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Dirección";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(81, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tabla de Simbolos";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dGV_int.AllowUserToAddRows = false;
+            this.dGV_int.AllowUserToDeleteRows = false;
+            this.dGV_int.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_int.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Num,
             this.Formato,
             this.CP,
@@ -210,11 +187,11 @@
             this.INS,
             this.OPER,
             this.MODO});
-            this.dataGridView2.Location = new System.Drawing.Point(257, 34);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(588, 364);
-            this.dataGridView2.TabIndex = 2;
+            this.dGV_int.Location = new System.Drawing.Point(257, 34);
+            this.dGV_int.Name = "dGV_int";
+            this.dGV_int.ReadOnly = true;
+            this.dGV_int.Size = new System.Drawing.Size(588, 364);
+            this.dGV_int.TabIndex = 2;
             // 
             // Num
             // 
@@ -264,14 +241,37 @@
             this.MODO.ReadOnly = true;
             this.MODO.Width = 105;
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(509, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Archivo Intermedio";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(81, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Tabla de Simbolos";
+            // 
+            // dGV_Sim
+            // 
+            this.dGV_Sim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_Sim.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Simbolo,
+            this.Direccion});
+            this.dGV_Sim.Location = new System.Drawing.Point(7, 34);
+            this.dGV_Sim.Name = "dGV_Sim";
+            this.dGV_Sim.Size = new System.Drawing.Size(243, 364);
+            this.dGV_Sim.TabIndex = 0;
+            // 
+            // Simbolo
+            // 
+            this.Simbolo.HeaderText = "Símbolo";
+            this.Simbolo.Name = "Simbolo";
+            this.Simbolo.ReadOnly = true;
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "Dirección";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
             // 
             // SICXE
             // 
@@ -289,8 +289,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_int)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_Sim)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,10 +309,10 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dGV_Sim;
         private System.Windows.Forms.DataGridViewTextBoxColumn Simbolo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dGV_int;
         private System.Windows.Forms.DataGridViewTextBoxColumn Num;
         private System.Windows.Forms.DataGridViewTextBoxColumn Formato;
         private System.Windows.Forms.DataGridViewTextBoxColumn CP;

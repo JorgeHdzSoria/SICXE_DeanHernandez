@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\Gramatica.g4 by ANTLR 4.6.6
+// Generated from E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\Gramatica.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -31,31 +31,36 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 [System.CLSCompliant(false)]
 public partial class GramaticaParser : Parser {
 	public const int
-		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, BASE=6, RESW=7, RESB=8, WORD=9, 
-		BYTE=10, START=11, END=12, INDEXADO=13, INSTR1=14, INSTR2=15, INSTR3=16, 
-		FINL=17, REG=18, NUMDEC=19, NUMHEX_sh=20, NUMHEX=21, TEXT=22, CONSTHEX=23, 
-		CONSTCAD=24;
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, BASE=7, RESW=8, RESB=9, 
+		WORD=10, BYTE=11, START=12, END=13, COMA=14, INSTR1=15, INSTR2_r1r2=16, 
+		INSTR2_r1=17, INSTR2_r1n=18, INSTR2_n=19, INSTR3=20, INSTR4=21, FINL=22, 
+		REG=23, NUMDEC=24, NUMHEX_sh=25, NUMHEX=26, TEXT=27, CONSTHEX=28, CONSTCAD=29;
 	public const int
-		RULE_programa = 0, RULE_inicio = 1, RULE_fin = 2, RULE_entrada = 3, RULE_proposiciones = 4, 
-		RULE_proposicion = 5, RULE_instruccion = 6, RULE_directiva = 7, RULE_tipodirectiva = 8, 
-		RULE_etiqueta = 9, RULE_formato = 10, RULE_f1 = 11, RULE_f2 = 12, RULE_f3 = 13, 
-		RULE_f4 = 14, RULE_indexado = 15, RULE_simple3 = 16, RULE_indirecto3 = 17, 
-		RULE_inmediato3 = 18, RULE_opdirectiva = 19, RULE_num = 20, RULE_compileUnit = 21;
+		RULE_programa = 0, RULE_inicio = 1, RULE_fin = 2, RULE_proposiciones = 3, 
+		RULE_proposicion = 4, RULE_saltoLinea = 5, RULE_directiva = 6, RULE_tipodirectiva = 7, 
+		RULE_byte = 8, RULE_word = 9, RULE_resb = 10, RULE_resw = 11, RULE_base = 12, 
+		RULE_instruccion = 13, RULE_formato = 14, RULE_f1 = 15, RULE_f2 = 16, 
+		RULE_f3 = 17, RULE_f4 = 18, RULE_simple3 = 19, RULE_indirecto3 = 20, RULE_inmediato3 = 21, 
+		RULE_simple4 = 22, RULE_indirecto4 = 23, RULE_inmediato4 = 24, RULE_num = 25, 
+		RULE_etiqueta = 26, RULE_const = 27, RULE_reg = 28;
 	public static readonly string[] ruleNames = {
-		"programa", "inicio", "fin", "entrada", "proposiciones", "proposicion", 
-		"instruccion", "directiva", "tipodirectiva", "etiqueta", "formato", "f1", 
-		"f2", "f3", "f4", "indexado", "simple3", "indirecto3", "inmediato3", "opdirectiva", 
-		"num", "compileUnit"
+		"programa", "inicio", "fin", "proposiciones", "proposicion", "saltoLinea", 
+		"directiva", "tipodirectiva", "byte", "word", "resb", "resw", "base", 
+		"instruccion", "formato", "f1", "f2", "f3", "f4", "simple3", "indirecto3", 
+		"inmediato3", "simple4", "indirecto4", "inmediato4", "num", "etiqueta", 
+		"const", "reg"
 	};
 
 	private static readonly string[] _LiteralNames = {
-		null, "','", "'+'", "'RSUB'", "'@'", "'#'", "'BASE'", "'RESW'", "'RESB'", 
-		"'WORD'", "'BYTE'", "'START'", "'END'"
+		null, "',X'", "', X'", "'RSUB'", "'@'", "'#'", "'+RSUB'", "'BASE'", "'RESW'", 
+		"'RESB'", "'WORD'", "'BYTE'", "'START'", "'END'", null, null, null, null, 
+		null, "'SVC'"
 	};
 	private static readonly string[] _SymbolicNames = {
-		null, null, null, null, null, null, "BASE", "RESW", "RESB", "WORD", "BYTE", 
-		"START", "END", "INDEXADO", "INSTR1", "INSTR2", "INSTR3", "FINL", "REG", 
-		"NUMDEC", "NUMHEX_sh", "NUMHEX", "TEXT", "CONSTHEX", "CONSTCAD"
+		null, null, null, null, null, null, null, "BASE", "RESW", "RESB", "WORD", 
+		"BYTE", "START", "END", "COMA", "INSTR1", "INSTR2_r1r2", "INSTR2_r1", 
+		"INSTR2_r1n", "INSTR2_n", "INSTR3", "INSTR4", "FINL", "REG", "NUMDEC", 
+		"NUMHEX_sh", "NUMHEX", "TEXT", "CONSTHEX", "CONSTCAD"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -144,9 +149,9 @@ public partial class GramaticaParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 44; inicio();
-			State = 45; proposiciones();
-			State = 46; fin();
+			State = 58; inicio();
+			State = 59; proposiciones();
+			State = 60; fin();
 			}
 		}
 		catch (RecognitionException re) {
@@ -168,9 +173,8 @@ public partial class GramaticaParser : Parser {
 		public NumContext num() {
 			return GetRuleContext<NumContext>(0);
 		}
-		public ITerminalNode FINL() { return GetToken(GramaticaParser.FINL, 0); }
-		public ProposicionContext proposicion() {
-			return GetRuleContext<ProposicionContext>(0);
+		public SaltoLineaContext saltoLinea() {
+			return GetRuleContext<SaltoLineaContext>(0);
 		}
 		public InicioContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -197,25 +201,12 @@ public partial class GramaticaParser : Parser {
 		InicioContext _localctx = new InicioContext(_ctx, State);
 		EnterRule(_localctx, 2, RULE_inicio);
 		try {
-			State = 54;
-			_errHandler.Sync(this);
-			switch ( Interpreter.AdaptivePredict(_input,0,_ctx) ) {
-			case 1:
-				EnterOuterAlt(_localctx, 1);
-				{
-				State = 48; etiqueta();
-				State = 49; Match(START);
-				State = 50; num();
-				State = 51; Match(FINL);
-				}
-				break;
-
-			case 2:
-				EnterOuterAlt(_localctx, 2);
-				{
-				State = 53; proposicion();
-				}
-				break;
+			EnterOuterAlt(_localctx, 1);
+			{
+			State = 62; etiqueta();
+			State = 63; Match(START);
+			State = 64; num();
+			State = 65; saltoLinea();
 			}
 		}
 		catch (RecognitionException re) {
@@ -231,10 +222,12 @@ public partial class GramaticaParser : Parser {
 
 	public partial class FinContext : ParserRuleContext {
 		public ITerminalNode END() { return GetToken(GramaticaParser.END, 0); }
-		public EntradaContext entrada() {
-			return GetRuleContext<EntradaContext>(0);
+		public EtiquetaContext etiqueta() {
+			return GetRuleContext<EtiquetaContext>(0);
 		}
-		public ITerminalNode FINL() { return GetToken(GramaticaParser.FINL, 0); }
+		public SaltoLineaContext saltoLinea() {
+			return GetRuleContext<SaltoLineaContext>(0);
+		}
 		public FinContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
@@ -263,66 +256,22 @@ public partial class GramaticaParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 56; Match(END);
-			State = 57; entrada();
-			State = 59;
-			_errHandler.Sync(this);
-			_la = _input.La(1);
-			if (_la==FINL) {
-				{
-				State = 58; Match(FINL);
-				}
-			}
-
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.ReportError(this, re);
-			_errHandler.Recover(this, re);
-		}
-		finally {
-			ExitRule();
-		}
-		return _localctx;
-	}
-
-	public partial class EntradaContext : ParserRuleContext {
-		public ITerminalNode TEXT() { return GetToken(GramaticaParser.TEXT, 0); }
-		public EntradaContext(ParserRuleContext parent, int invokingState)
-			: base(parent, invokingState)
-		{
-		}
-		public override int RuleIndex { get { return RULE_entrada; } }
-		public override void EnterRule(IParseTreeListener listener) {
-			IGramaticaListener typedListener = listener as IGramaticaListener;
-			if (typedListener != null) typedListener.EnterEntrada(this);
-		}
-		public override void ExitRule(IParseTreeListener listener) {
-			IGramaticaListener typedListener = listener as IGramaticaListener;
-			if (typedListener != null) typedListener.ExitEntrada(this);
-		}
-		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IGramaticaVisitor<TResult> typedVisitor = visitor as IGramaticaVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitEntrada(this);
-			else return visitor.VisitChildren(this);
-		}
-	}
-
-	[RuleVersion(0)]
-	public EntradaContext entrada() {
-		EntradaContext _localctx = new EntradaContext(_ctx, State);
-		EnterRule(_localctx, 6, RULE_entrada);
-		int _la;
-		try {
-			EnterOuterAlt(_localctx, 1);
-			{
-			State = 62;
+			State = 67; Match(END);
+			State = 69;
 			_errHandler.Sync(this);
 			_la = _input.La(1);
 			if (_la==TEXT) {
 				{
-				State = 61; Match(TEXT);
+				State = 68; etiqueta();
+				}
+			}
+
+			State = 72;
+			_errHandler.Sync(this);
+			_la = _input.La(1);
+			if (_la==FINL) {
+				{
+				State = 71; saltoLinea();
 				}
 			}
 
@@ -346,9 +295,11 @@ public partial class GramaticaParser : Parser {
 		public ProposicionContext proposicion(int i) {
 			return GetRuleContext<ProposicionContext>(i);
 		}
-		public ITerminalNode[] FINL() { return GetTokens(GramaticaParser.FINL); }
-		public ITerminalNode FINL(int i) {
-			return GetToken(GramaticaParser.FINL, i);
+		public SaltoLineaContext[] saltoLinea() {
+			return GetRuleContexts<SaltoLineaContext>();
+		}
+		public SaltoLineaContext saltoLinea(int i) {
+			return GetRuleContext<SaltoLineaContext>(i);
 		}
 		public ProposicionesContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -373,22 +324,22 @@ public partial class GramaticaParser : Parser {
 	[RuleVersion(0)]
 	public ProposicionesContext proposiciones() {
 		ProposicionesContext _localctx = new ProposicionesContext(_ctx, State);
-		EnterRule(_localctx, 8, RULE_proposiciones);
+		EnterRule(_localctx, 6, RULE_proposiciones);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 69;
+			State = 79;
 			_errHandler.Sync(this);
 			_la = _input.La(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__2) | (1L << BASE) | (1L << RESW) | (1L << RESB) | (1L << WORD) | (1L << BYTE) | (1L << START) | (1L << INSTR1) | (1L << INSTR2) | (1L << INSTR3) | (1L << TEXT))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__5) | (1L << BASE) | (1L << RESW) | (1L << RESB) | (1L << WORD) | (1L << BYTE) | (1L << INSTR1) | (1L << INSTR2_r1r2) | (1L << INSTR2_r1) | (1L << INSTR2_r1n) | (1L << INSTR2_n) | (1L << INSTR3) | (1L << INSTR4) | (1L << TEXT))) != 0)) {
 				{
 				{
-				State = 64; proposicion();
-				State = 65; Match(FINL);
+				State = 74; proposicion();
+				State = 75; saltoLinea();
 				}
 				}
-				State = 71;
+				State = 81;
 				_errHandler.Sync(this);
 				_la = _input.La(1);
 			}
@@ -435,22 +386,22 @@ public partial class GramaticaParser : Parser {
 	[RuleVersion(0)]
 	public ProposicionContext proposicion() {
 		ProposicionContext _localctx = new ProposicionContext(_ctx, State);
-		EnterRule(_localctx, 10, RULE_proposicion);
+		EnterRule(_localctx, 8, RULE_proposicion);
 		try {
-			State = 74;
+			State = 84;
 			_errHandler.Sync(this);
-			switch ( Interpreter.AdaptivePredict(_input,4,_ctx) ) {
+			switch ( Interpreter.AdaptivePredict(_input,3,_ctx) ) {
 			case 1:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 72; instruccion();
+				State = 82; instruccion();
 				}
 				break;
 
 			case 2:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 73; directiva();
+				State = 83; directiva();
 				}
 				break;
 			}
@@ -466,42 +417,36 @@ public partial class GramaticaParser : Parser {
 		return _localctx;
 	}
 
-	public partial class InstruccionContext : ParserRuleContext {
-		public EtiquetaContext etiqueta() {
-			return GetRuleContext<EtiquetaContext>(0);
-		}
-		public FormatoContext formato() {
-			return GetRuleContext<FormatoContext>(0);
-		}
-		public InstruccionContext(ParserRuleContext parent, int invokingState)
+	public partial class SaltoLineaContext : ParserRuleContext {
+		public ITerminalNode FINL() { return GetToken(GramaticaParser.FINL, 0); }
+		public SaltoLineaContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_instruccion; } }
+		public override int RuleIndex { get { return RULE_saltoLinea; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IGramaticaListener typedListener = listener as IGramaticaListener;
-			if (typedListener != null) typedListener.EnterInstruccion(this);
+			if (typedListener != null) typedListener.EnterSaltoLinea(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IGramaticaListener typedListener = listener as IGramaticaListener;
-			if (typedListener != null) typedListener.ExitInstruccion(this);
+			if (typedListener != null) typedListener.ExitSaltoLinea(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IGramaticaVisitor<TResult> typedVisitor = visitor as IGramaticaVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitInstruccion(this);
+			if (typedVisitor != null) return typedVisitor.VisitSaltoLinea(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public InstruccionContext instruccion() {
-		InstruccionContext _localctx = new InstruccionContext(_ctx, State);
-		EnterRule(_localctx, 12, RULE_instruccion);
+	public SaltoLineaContext saltoLinea() {
+		SaltoLineaContext _localctx = new SaltoLineaContext(_ctx, State);
+		EnterRule(_localctx, 10, RULE_saltoLinea);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 76; etiqueta();
-			State = 77; formato();
+			State = 86; Match(FINL);
 			}
 		}
 		catch (RecognitionException re) {
@@ -516,14 +461,11 @@ public partial class GramaticaParser : Parser {
 	}
 
 	public partial class DirectivaContext : ParserRuleContext {
-		public EtiquetaContext etiqueta() {
-			return GetRuleContext<EtiquetaContext>(0);
-		}
 		public TipodirectivaContext tipodirectiva() {
 			return GetRuleContext<TipodirectivaContext>(0);
 		}
-		public OpdirectivaContext opdirectiva() {
-			return GetRuleContext<OpdirectivaContext>(0);
+		public EtiquetaContext etiqueta() {
+			return GetRuleContext<EtiquetaContext>(0);
 		}
 		public DirectivaContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -548,13 +490,21 @@ public partial class GramaticaParser : Parser {
 	[RuleVersion(0)]
 	public DirectivaContext directiva() {
 		DirectivaContext _localctx = new DirectivaContext(_ctx, State);
-		EnterRule(_localctx, 14, RULE_directiva);
+		EnterRule(_localctx, 12, RULE_directiva);
+		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 79; etiqueta();
-			State = 80; tipodirectiva();
-			State = 81; opdirectiva();
+			State = 89;
+			_errHandler.Sync(this);
+			_la = _input.La(1);
+			if (_la==TEXT) {
+				{
+				State = 88; etiqueta();
+				}
+			}
+
+			State = 91; tipodirectiva();
 			}
 		}
 		catch (RecognitionException re) {
@@ -569,11 +519,21 @@ public partial class GramaticaParser : Parser {
 	}
 
 	public partial class TipodirectivaContext : ParserRuleContext {
-		public ITerminalNode BYTE() { return GetToken(GramaticaParser.BYTE, 0); }
-		public ITerminalNode WORD() { return GetToken(GramaticaParser.WORD, 0); }
-		public ITerminalNode RESB() { return GetToken(GramaticaParser.RESB, 0); }
-		public ITerminalNode RESW() { return GetToken(GramaticaParser.RESW, 0); }
-		public ITerminalNode BASE() { return GetToken(GramaticaParser.BASE, 0); }
+		public ByteContext @byte() {
+			return GetRuleContext<ByteContext>(0);
+		}
+		public WordContext word() {
+			return GetRuleContext<WordContext>(0);
+		}
+		public ResbContext resb() {
+			return GetRuleContext<ResbContext>(0);
+		}
+		public ReswContext resw() {
+			return GetRuleContext<ReswContext>(0);
+		}
+		public BaseContext @base() {
+			return GetRuleContext<BaseContext>(0);
+		}
 		public TipodirectivaContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
@@ -597,23 +557,43 @@ public partial class GramaticaParser : Parser {
 	[RuleVersion(0)]
 	public TipodirectivaContext tipodirectiva() {
 		TipodirectivaContext _localctx = new TipodirectivaContext(_ctx, State);
-		EnterRule(_localctx, 16, RULE_tipodirectiva);
-		int _la;
+		EnterRule(_localctx, 14, RULE_tipodirectiva);
 		try {
-			EnterOuterAlt(_localctx, 1);
-			{
-			State = 83;
-			_la = _input.La(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << BASE) | (1L << RESW) | (1L << RESB) | (1L << WORD) | (1L << BYTE))) != 0)) ) {
-			_errHandler.RecoverInline(this);
-			} else {
-				if (_input.La(1) == TokenConstants.Eof) {
-					matchedEOF = true;
+			State = 98;
+			_errHandler.Sync(this);
+			switch (_input.La(1)) {
+			case BYTE:
+				EnterOuterAlt(_localctx, 1);
+				{
+				State = 93; @byte();
 				}
-
-				_errHandler.ReportMatch(this);
-				Consume();
-			}
+				break;
+			case WORD:
+				EnterOuterAlt(_localctx, 2);
+				{
+				State = 94; word();
+				}
+				break;
+			case RESB:
+				EnterOuterAlt(_localctx, 3);
+				{
+				State = 95; resb();
+				}
+				break;
+			case RESW:
+				EnterOuterAlt(_localctx, 4);
+				{
+				State = 96; resw();
+				}
+				break;
+			case BASE:
+				EnterOuterAlt(_localctx, 5);
+				{
+				State = 97; @base();
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -627,45 +607,286 @@ public partial class GramaticaParser : Parser {
 		return _localctx;
 	}
 
-	public partial class EtiquetaContext : ParserRuleContext {
-		public ITerminalNode TEXT() { return GetToken(GramaticaParser.TEXT, 0); }
-		public EtiquetaContext(ParserRuleContext parent, int invokingState)
+	public partial class ByteContext : ParserRuleContext {
+		public ITerminalNode BYTE() { return GetToken(GramaticaParser.BYTE, 0); }
+		public ConstContext @const() {
+			return GetRuleContext<ConstContext>(0);
+		}
+		public ByteContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_etiqueta; } }
+		public override int RuleIndex { get { return RULE_byte; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IGramaticaListener typedListener = listener as IGramaticaListener;
-			if (typedListener != null) typedListener.EnterEtiqueta(this);
+			if (typedListener != null) typedListener.EnterByte(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IGramaticaListener typedListener = listener as IGramaticaListener;
-			if (typedListener != null) typedListener.ExitEtiqueta(this);
+			if (typedListener != null) typedListener.ExitByte(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IGramaticaVisitor<TResult> typedVisitor = visitor as IGramaticaVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitEtiqueta(this);
+			if (typedVisitor != null) return typedVisitor.VisitByte(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public EtiquetaContext etiqueta() {
-		EtiquetaContext _localctx = new EtiquetaContext(_ctx, State);
-		EnterRule(_localctx, 18, RULE_etiqueta);
+	public ByteContext @byte() {
+		ByteContext _localctx = new ByteContext(_ctx, State);
+		EnterRule(_localctx, 16, RULE_byte);
+		try {
+			EnterOuterAlt(_localctx, 1);
+			{
+			State = 100; Match(BYTE);
+			State = 101; @const();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.ReportError(this, re);
+			_errHandler.Recover(this, re);
+		}
+		finally {
+			ExitRule();
+		}
+		return _localctx;
+	}
+
+	public partial class WordContext : ParserRuleContext {
+		public ITerminalNode WORD() { return GetToken(GramaticaParser.WORD, 0); }
+		public NumContext num() {
+			return GetRuleContext<NumContext>(0);
+		}
+		public WordContext(ParserRuleContext parent, int invokingState)
+			: base(parent, invokingState)
+		{
+		}
+		public override int RuleIndex { get { return RULE_word; } }
+		public override void EnterRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.EnterWord(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.ExitWord(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IGramaticaVisitor<TResult> typedVisitor = visitor as IGramaticaVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitWord(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+
+	[RuleVersion(0)]
+	public WordContext word() {
+		WordContext _localctx = new WordContext(_ctx, State);
+		EnterRule(_localctx, 18, RULE_word);
+		try {
+			EnterOuterAlt(_localctx, 1);
+			{
+			State = 103; Match(WORD);
+			State = 104; num();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.ReportError(this, re);
+			_errHandler.Recover(this, re);
+		}
+		finally {
+			ExitRule();
+		}
+		return _localctx;
+	}
+
+	public partial class ResbContext : ParserRuleContext {
+		public ITerminalNode RESB() { return GetToken(GramaticaParser.RESB, 0); }
+		public NumContext num() {
+			return GetRuleContext<NumContext>(0);
+		}
+		public ResbContext(ParserRuleContext parent, int invokingState)
+			: base(parent, invokingState)
+		{
+		}
+		public override int RuleIndex { get { return RULE_resb; } }
+		public override void EnterRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.EnterResb(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.ExitResb(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IGramaticaVisitor<TResult> typedVisitor = visitor as IGramaticaVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitResb(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+
+	[RuleVersion(0)]
+	public ResbContext resb() {
+		ResbContext _localctx = new ResbContext(_ctx, State);
+		EnterRule(_localctx, 20, RULE_resb);
+		try {
+			EnterOuterAlt(_localctx, 1);
+			{
+			State = 106; Match(RESB);
+			State = 107; num();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.ReportError(this, re);
+			_errHandler.Recover(this, re);
+		}
+		finally {
+			ExitRule();
+		}
+		return _localctx;
+	}
+
+	public partial class ReswContext : ParserRuleContext {
+		public ITerminalNode RESW() { return GetToken(GramaticaParser.RESW, 0); }
+		public NumContext num() {
+			return GetRuleContext<NumContext>(0);
+		}
+		public ReswContext(ParserRuleContext parent, int invokingState)
+			: base(parent, invokingState)
+		{
+		}
+		public override int RuleIndex { get { return RULE_resw; } }
+		public override void EnterRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.EnterResw(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.ExitResw(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IGramaticaVisitor<TResult> typedVisitor = visitor as IGramaticaVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitResw(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+
+	[RuleVersion(0)]
+	public ReswContext resw() {
+		ReswContext _localctx = new ReswContext(_ctx, State);
+		EnterRule(_localctx, 22, RULE_resw);
+		try {
+			EnterOuterAlt(_localctx, 1);
+			{
+			State = 109; Match(RESW);
+			State = 110; num();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.ReportError(this, re);
+			_errHandler.Recover(this, re);
+		}
+		finally {
+			ExitRule();
+		}
+		return _localctx;
+	}
+
+	public partial class BaseContext : ParserRuleContext {
+		public ITerminalNode BASE() { return GetToken(GramaticaParser.BASE, 0); }
+		public EtiquetaContext etiqueta() {
+			return GetRuleContext<EtiquetaContext>(0);
+		}
+		public BaseContext(ParserRuleContext parent, int invokingState)
+			: base(parent, invokingState)
+		{
+		}
+		public override int RuleIndex { get { return RULE_base; } }
+		public override void EnterRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.EnterBase(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.ExitBase(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IGramaticaVisitor<TResult> typedVisitor = visitor as IGramaticaVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitBase(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+
+	[RuleVersion(0)]
+	public BaseContext @base() {
+		BaseContext _localctx = new BaseContext(_ctx, State);
+		EnterRule(_localctx, 24, RULE_base);
+		try {
+			EnterOuterAlt(_localctx, 1);
+			{
+			State = 112; Match(BASE);
+			State = 113; etiqueta();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.ReportError(this, re);
+			_errHandler.Recover(this, re);
+		}
+		finally {
+			ExitRule();
+		}
+		return _localctx;
+	}
+
+	public partial class InstruccionContext : ParserRuleContext {
+		public FormatoContext formato() {
+			return GetRuleContext<FormatoContext>(0);
+		}
+		public EtiquetaContext etiqueta() {
+			return GetRuleContext<EtiquetaContext>(0);
+		}
+		public InstruccionContext(ParserRuleContext parent, int invokingState)
+			: base(parent, invokingState)
+		{
+		}
+		public override int RuleIndex { get { return RULE_instruccion; } }
+		public override void EnterRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.EnterInstruccion(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.ExitInstruccion(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IGramaticaVisitor<TResult> typedVisitor = visitor as IGramaticaVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitInstruccion(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+
+	[RuleVersion(0)]
+	public InstruccionContext instruccion() {
+		InstruccionContext _localctx = new InstruccionContext(_ctx, State);
+		EnterRule(_localctx, 26, RULE_instruccion);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 86;
+			State = 116;
 			_errHandler.Sync(this);
 			_la = _input.La(1);
 			if (_la==TEXT) {
 				{
-				State = 85; Match(TEXT);
+				State = 115; etiqueta();
 				}
 			}
 
+			State = 118; formato();
 			}
 		}
 		catch (RecognitionException re) {
@@ -715,34 +936,38 @@ public partial class GramaticaParser : Parser {
 	[RuleVersion(0)]
 	public FormatoContext formato() {
 		FormatoContext _localctx = new FormatoContext(_ctx, State);
-		EnterRule(_localctx, 20, RULE_formato);
+		EnterRule(_localctx, 28, RULE_formato);
 		try {
-			State = 92;
+			State = 124;
 			_errHandler.Sync(this);
 			switch (_input.La(1)) {
 			case INSTR1:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 88; f1();
+				State = 120; f1();
 				}
 				break;
-			case INSTR2:
+			case INSTR2_r1r2:
+			case INSTR2_r1:
+			case INSTR2_r1n:
+			case INSTR2_n:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 89; f2();
+				State = 121; f2();
 				}
 				break;
 			case T__2:
 			case INSTR3:
 				EnterOuterAlt(_localctx, 3);
 				{
-				State = 90; f3();
+				State = 122; f3();
 				}
 				break;
-			case T__1:
+			case T__5:
+			case INSTR4:
 				EnterOuterAlt(_localctx, 4);
 				{
-				State = 91; f4();
+				State = 123; f4();
 				}
 				break;
 			default:
@@ -785,11 +1010,11 @@ public partial class GramaticaParser : Parser {
 	[RuleVersion(0)]
 	public F1Context f1() {
 		F1Context _localctx = new F1Context(_ctx, State);
-		EnterRule(_localctx, 22, RULE_f1);
+		EnterRule(_localctx, 30, RULE_f1);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 94; Match(INSTR1);
+			State = 126; Match(INSTR1);
 			}
 		}
 		catch (RecognitionException re) {
@@ -804,14 +1029,20 @@ public partial class GramaticaParser : Parser {
 	}
 
 	public partial class F2Context : ParserRuleContext {
-		public ITerminalNode INSTR2() { return GetToken(GramaticaParser.INSTR2, 0); }
+		public ITerminalNode INSTR2_r1r2() { return GetToken(GramaticaParser.INSTR2_r1r2, 0); }
+		public RegContext[] reg() {
+			return GetRuleContexts<RegContext>();
+		}
+		public RegContext reg(int i) {
+			return GetRuleContext<RegContext>(i);
+		}
+		public ITerminalNode COMA() { return GetToken(GramaticaParser.COMA, 0); }
+		public ITerminalNode INSTR2_r1() { return GetToken(GramaticaParser.INSTR2_r1, 0); }
+		public ITerminalNode INSTR2_r1n() { return GetToken(GramaticaParser.INSTR2_r1n, 0); }
 		public NumContext num() {
 			return GetRuleContext<NumContext>(0);
 		}
-		public ITerminalNode[] REG() { return GetTokens(GramaticaParser.REG); }
-		public ITerminalNode REG(int i) {
-			return GetToken(GramaticaParser.REG, i);
-		}
+		public ITerminalNode INSTR2_n() { return GetToken(GramaticaParser.INSTR2_n, 0); }
 		public F2Context(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
@@ -835,42 +1066,53 @@ public partial class GramaticaParser : Parser {
 	[RuleVersion(0)]
 	public F2Context f2() {
 		F2Context _localctx = new F2Context(_ctx, State);
-		EnterRule(_localctx, 24, RULE_f2);
+		EnterRule(_localctx, 32, RULE_f2);
 		try {
-			EnterOuterAlt(_localctx, 1);
-			{
-			State = 96; Match(INSTR2);
-			State = 105;
+			State = 142;
 			_errHandler.Sync(this);
-			switch ( Interpreter.AdaptivePredict(_input,7,_ctx) ) {
-			case 1:
+			switch (_input.La(1)) {
+			case INSTR2_r1r2:
+				EnterOuterAlt(_localctx, 1);
 				{
-				State = 97; num();
+				State = 128; Match(INSTR2_r1r2);
+				{
+				State = 129; reg();
+				State = 130; Match(COMA);
+				State = 131; reg();
+				}
 				}
 				break;
-
-			case 2:
+			case INSTR2_r1:
+				EnterOuterAlt(_localctx, 2);
 				{
-				State = 98; Match(REG);
+				State = 133; Match(INSTR2_r1);
+				{
+				State = 134; reg();
+				}
 				}
 				break;
-
-			case 3:
+			case INSTR2_r1n:
+				EnterOuterAlt(_localctx, 3);
 				{
-				State = 99; Match(REG);
-				State = 100; Match(T__0);
-				State = 101; Match(REG);
+				State = 135; Match(INSTR2_r1n);
+				{
+				State = 136; reg();
+				State = 137; Match(COMA);
+				State = 138; num();
+				}
 				}
 				break;
-
-			case 4:
+			case INSTR2_n:
+				EnterOuterAlt(_localctx, 4);
 				{
-				State = 102; Match(REG);
-				State = 103; Match(T__0);
-				State = 104; num();
+				State = 140; Match(INSTR2_n);
+				{
+				State = 141; num();
+				}
 				}
 				break;
-			}
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -917,29 +1159,29 @@ public partial class GramaticaParser : Parser {
 	[RuleVersion(0)]
 	public F3Context f3() {
 		F3Context _localctx = new F3Context(_ctx, State);
-		EnterRule(_localctx, 26, RULE_f3);
+		EnterRule(_localctx, 34, RULE_f3);
 		try {
-			State = 110;
+			State = 147;
 			_errHandler.Sync(this);
-			switch ( Interpreter.AdaptivePredict(_input,8,_ctx) ) {
+			switch ( Interpreter.AdaptivePredict(_input,9,_ctx) ) {
 			case 1:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 107; simple3();
+				State = 144; simple3();
 				}
 				break;
 
 			case 2:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 108; indirecto3();
+				State = 145; indirecto3();
 				}
 				break;
 
 			case 3:
 				EnterOuterAlt(_localctx, 3);
 				{
-				State = 109; inmediato3();
+				State = 146; inmediato3();
 				}
 				break;
 			}
@@ -956,8 +1198,14 @@ public partial class GramaticaParser : Parser {
 	}
 
 	public partial class F4Context : ParserRuleContext {
-		public F3Context f3() {
-			return GetRuleContext<F3Context>(0);
+		public Simple4Context simple4() {
+			return GetRuleContext<Simple4Context>(0);
+		}
+		public Indirecto4Context indirecto4() {
+			return GetRuleContext<Indirecto4Context>(0);
+		}
+		public Inmediato4Context inmediato4() {
+			return GetRuleContext<Inmediato4Context>(0);
 		}
 		public F4Context(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -982,55 +1230,31 @@ public partial class GramaticaParser : Parser {
 	[RuleVersion(0)]
 	public F4Context f4() {
 		F4Context _localctx = new F4Context(_ctx, State);
-		EnterRule(_localctx, 28, RULE_f4);
+		EnterRule(_localctx, 36, RULE_f4);
 		try {
-			EnterOuterAlt(_localctx, 1);
-			{
-			State = 112; Match(T__1);
-			State = 113; f3();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.ReportError(this, re);
-			_errHandler.Recover(this, re);
-		}
-		finally {
-			ExitRule();
-		}
-		return _localctx;
-	}
+			State = 152;
+			_errHandler.Sync(this);
+			switch ( Interpreter.AdaptivePredict(_input,10,_ctx) ) {
+			case 1:
+				EnterOuterAlt(_localctx, 1);
+				{
+				State = 149; simple4();
+				}
+				break;
 
-	public partial class IndexadoContext : ParserRuleContext {
-		public ITerminalNode INDEXADO() { return GetToken(GramaticaParser.INDEXADO, 0); }
-		public IndexadoContext(ParserRuleContext parent, int invokingState)
-			: base(parent, invokingState)
-		{
-		}
-		public override int RuleIndex { get { return RULE_indexado; } }
-		public override void EnterRule(IParseTreeListener listener) {
-			IGramaticaListener typedListener = listener as IGramaticaListener;
-			if (typedListener != null) typedListener.EnterIndexado(this);
-		}
-		public override void ExitRule(IParseTreeListener listener) {
-			IGramaticaListener typedListener = listener as IGramaticaListener;
-			if (typedListener != null) typedListener.ExitIndexado(this);
-		}
-		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IGramaticaVisitor<TResult> typedVisitor = visitor as IGramaticaVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitIndexado(this);
-			else return visitor.VisitChildren(this);
-		}
-	}
+			case 2:
+				EnterOuterAlt(_localctx, 2);
+				{
+				State = 150; indirecto4();
+				}
+				break;
 
-	[RuleVersion(0)]
-	public IndexadoContext indexado() {
-		IndexadoContext _localctx = new IndexadoContext(_ctx, State);
-		EnterRule(_localctx, 30, RULE_indexado);
-		try {
-			EnterOuterAlt(_localctx, 1);
-			{
-			State = 115; Match(INDEXADO);
+			case 3:
+				EnterOuterAlt(_localctx, 3);
+				{
+				State = 151; inmediato4();
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -1049,9 +1273,6 @@ public partial class GramaticaParser : Parser {
 		public ITerminalNode TEXT() { return GetToken(GramaticaParser.TEXT, 0); }
 		public NumContext num() {
 			return GetRuleContext<NumContext>(0);
-		}
-		public IndexadoContext indexado() {
-			return GetRuleContext<IndexadoContext>(0);
 		}
 		public Simple3Context(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -1076,39 +1297,50 @@ public partial class GramaticaParser : Parser {
 	[RuleVersion(0)]
 	public Simple3Context simple3() {
 		Simple3Context _localctx = new Simple3Context(_ctx, State);
-		EnterRule(_localctx, 32, RULE_simple3);
+		EnterRule(_localctx, 38, RULE_simple3);
 		int _la;
 		try {
-			State = 126;
+			State = 163;
 			_errHandler.Sync(this);
 			switch (_input.La(1)) {
 			case INSTR3:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 117; Match(INSTR3);
-				State = 120;
+				State = 154; Match(INSTR3);
+				State = 157;
 				_errHandler.Sync(this);
 				switch (_input.La(1)) {
 				case TEXT:
 					{
-					State = 118; Match(TEXT);
+					State = 155; Match(TEXT);
 					}
 					break;
 				case NUMDEC:
 				case NUMHEX:
 					{
-					State = 119; num();
+					State = 156; num();
 					}
 					break;
 				default:
 					throw new NoViableAltException(this);
 				}
-				State = 123;
+				State = 160;
 				_errHandler.Sync(this);
 				_la = _input.La(1);
-				if (_la==INDEXADO) {
+				if (_la==T__0 || _la==T__1) {
 					{
-					State = 122; indexado();
+					State = 159;
+					_la = _input.La(1);
+					if ( !(_la==T__0 || _la==T__1) ) {
+					_errHandler.RecoverInline(this);
+					} else {
+						if (_input.La(1) == TokenConstants.Eof) {
+							matchedEOF = true;
+						}
+
+						_errHandler.ReportMatch(this);
+						Consume();
+					}
 					}
 				}
 
@@ -1117,7 +1349,7 @@ public partial class GramaticaParser : Parser {
 			case T__2:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 125; Match(T__2);
+				State = 162; Match(T__2);
 				}
 				break;
 			default:
@@ -1164,26 +1396,26 @@ public partial class GramaticaParser : Parser {
 	[RuleVersion(0)]
 	public Indirecto3Context indirecto3() {
 		Indirecto3Context _localctx = new Indirecto3Context(_ctx, State);
-		EnterRule(_localctx, 34, RULE_indirecto3);
+		EnterRule(_localctx, 40, RULE_indirecto3);
 		try {
-			State = 134;
+			State = 171;
 			_errHandler.Sync(this);
-			switch ( Interpreter.AdaptivePredict(_input,12,_ctx) ) {
+			switch ( Interpreter.AdaptivePredict(_input,14,_ctx) ) {
 			case 1:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 128; Match(INSTR3);
-				State = 129; Match(T__3);
-				State = 130; num();
+				State = 165; Match(INSTR3);
+				State = 166; Match(T__3);
+				State = 167; num();
 				}
 				break;
 
 			case 2:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 131; Match(INSTR3);
-				State = 132; Match(T__3);
-				State = 133; Match(TEXT);
+				State = 168; Match(INSTR3);
+				State = 169; Match(T__3);
+				State = 170; Match(TEXT);
 				}
 				break;
 			}
@@ -1228,26 +1460,26 @@ public partial class GramaticaParser : Parser {
 	[RuleVersion(0)]
 	public Inmediato3Context inmediato3() {
 		Inmediato3Context _localctx = new Inmediato3Context(_ctx, State);
-		EnterRule(_localctx, 36, RULE_inmediato3);
+		EnterRule(_localctx, 42, RULE_inmediato3);
 		try {
-			State = 142;
+			State = 179;
 			_errHandler.Sync(this);
-			switch ( Interpreter.AdaptivePredict(_input,13,_ctx) ) {
+			switch ( Interpreter.AdaptivePredict(_input,15,_ctx) ) {
 			case 1:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 136; Match(INSTR3);
-				State = 137; Match(T__4);
-				State = 138; num();
+				State = 173; Match(INSTR3);
+				State = 174; Match(T__4);
+				State = 175; num();
 				}
 				break;
 
 			case 2:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 139; Match(INSTR3);
-				State = 140; Match(T__4);
-				State = 141; Match(TEXT);
+				State = 176; Match(INSTR3);
+				State = 177; Match(T__4);
+				State = 178; Match(TEXT);
 				}
 				break;
 			}
@@ -1263,68 +1495,165 @@ public partial class GramaticaParser : Parser {
 		return _localctx;
 	}
 
-	public partial class OpdirectivaContext : ParserRuleContext {
-		public NumContext num() {
-			return GetRuleContext<NumContext>(0);
-		}
-		public ITerminalNode CONSTHEX() { return GetToken(GramaticaParser.CONSTHEX, 0); }
-		public ITerminalNode CONSTCAD() { return GetToken(GramaticaParser.CONSTCAD, 0); }
+	public partial class Simple4Context : ParserRuleContext {
+		public ITerminalNode INSTR4() { return GetToken(GramaticaParser.INSTR4, 0); }
 		public ITerminalNode TEXT() { return GetToken(GramaticaParser.TEXT, 0); }
-		public OpdirectivaContext(ParserRuleContext parent, int invokingState)
+		public Simple4Context(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_opdirectiva; } }
+		public override int RuleIndex { get { return RULE_simple4; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IGramaticaListener typedListener = listener as IGramaticaListener;
-			if (typedListener != null) typedListener.EnterOpdirectiva(this);
+			if (typedListener != null) typedListener.EnterSimple4(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IGramaticaListener typedListener = listener as IGramaticaListener;
-			if (typedListener != null) typedListener.ExitOpdirectiva(this);
+			if (typedListener != null) typedListener.ExitSimple4(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IGramaticaVisitor<TResult> typedVisitor = visitor as IGramaticaVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOpdirectiva(this);
+			if (typedVisitor != null) return typedVisitor.VisitSimple4(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public OpdirectivaContext opdirectiva() {
-		OpdirectivaContext _localctx = new OpdirectivaContext(_ctx, State);
-		EnterRule(_localctx, 38, RULE_opdirectiva);
+	public Simple4Context simple4() {
+		Simple4Context _localctx = new Simple4Context(_ctx, State);
+		EnterRule(_localctx, 44, RULE_simple4);
+		int _la;
 		try {
-			State = 148;
+			State = 187;
 			_errHandler.Sync(this);
 			switch (_input.La(1)) {
-			case NUMDEC:
-			case NUMHEX:
+			case INSTR4:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 144; num();
+				State = 181; Match(INSTR4);
+				State = 182; Match(TEXT);
+				State = 184;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				if (_la==T__0 || _la==T__1) {
+					{
+					State = 183;
+					_la = _input.La(1);
+					if ( !(_la==T__0 || _la==T__1) ) {
+					_errHandler.RecoverInline(this);
+					} else {
+						if (_input.La(1) == TokenConstants.Eof) {
+							matchedEOF = true;
+						}
+
+						_errHandler.ReportMatch(this);
+						Consume();
+					}
+					}
+				}
+
 				}
 				break;
-			case CONSTHEX:
+			case T__5:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 145; Match(CONSTHEX);
-				}
-				break;
-			case CONSTCAD:
-				EnterOuterAlt(_localctx, 3);
-				{
-				State = 146; Match(CONSTCAD);
-				}
-				break;
-			case TEXT:
-				EnterOuterAlt(_localctx, 4);
-				{
-				State = 147; Match(TEXT);
+				State = 186; Match(T__5);
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.ReportError(this, re);
+			_errHandler.Recover(this, re);
+		}
+		finally {
+			ExitRule();
+		}
+		return _localctx;
+	}
+
+	public partial class Indirecto4Context : ParserRuleContext {
+		public ITerminalNode INSTR4() { return GetToken(GramaticaParser.INSTR4, 0); }
+		public ITerminalNode TEXT() { return GetToken(GramaticaParser.TEXT, 0); }
+		public Indirecto4Context(ParserRuleContext parent, int invokingState)
+			: base(parent, invokingState)
+		{
+		}
+		public override int RuleIndex { get { return RULE_indirecto4; } }
+		public override void EnterRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.EnterIndirecto4(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.ExitIndirecto4(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IGramaticaVisitor<TResult> typedVisitor = visitor as IGramaticaVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitIndirecto4(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+
+	[RuleVersion(0)]
+	public Indirecto4Context indirecto4() {
+		Indirecto4Context _localctx = new Indirecto4Context(_ctx, State);
+		EnterRule(_localctx, 46, RULE_indirecto4);
+		try {
+			EnterOuterAlt(_localctx, 1);
+			{
+			State = 189; Match(INSTR4);
+			State = 190; Match(T__3);
+			State = 191; Match(TEXT);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.ReportError(this, re);
+			_errHandler.Recover(this, re);
+		}
+		finally {
+			ExitRule();
+		}
+		return _localctx;
+	}
+
+	public partial class Inmediato4Context : ParserRuleContext {
+		public ITerminalNode INSTR4() { return GetToken(GramaticaParser.INSTR4, 0); }
+		public ITerminalNode TEXT() { return GetToken(GramaticaParser.TEXT, 0); }
+		public Inmediato4Context(ParserRuleContext parent, int invokingState)
+			: base(parent, invokingState)
+		{
+		}
+		public override int RuleIndex { get { return RULE_inmediato4; } }
+		public override void EnterRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.EnterInmediato4(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.ExitInmediato4(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IGramaticaVisitor<TResult> typedVisitor = visitor as IGramaticaVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitInmediato4(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+
+	[RuleVersion(0)]
+	public Inmediato4Context inmediato4() {
+		Inmediato4Context _localctx = new Inmediato4Context(_ctx, State);
+		EnterRule(_localctx, 48, RULE_inmediato4);
+		try {
+			EnterOuterAlt(_localctx, 1);
+			{
+			State = 193; Match(INSTR4);
+			State = 194; Match(T__4);
+			State = 195; Match(TEXT);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1364,12 +1693,12 @@ public partial class GramaticaParser : Parser {
 	[RuleVersion(0)]
 	public NumContext num() {
 		NumContext _localctx = new NumContext(_ctx, State);
-		EnterRule(_localctx, 40, RULE_num);
+		EnterRule(_localctx, 50, RULE_num);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 150;
+			State = 197;
 			_la = _input.La(1);
 			if ( !(_la==NUMDEC || _la==NUMHEX) ) {
 			_errHandler.RecoverInline(this);
@@ -1394,36 +1723,135 @@ public partial class GramaticaParser : Parser {
 		return _localctx;
 	}
 
-	public partial class CompileUnitContext : ParserRuleContext {
-		public ITerminalNode Eof() { return GetToken(GramaticaParser.Eof, 0); }
-		public CompileUnitContext(ParserRuleContext parent, int invokingState)
+	public partial class EtiquetaContext : ParserRuleContext {
+		public ITerminalNode TEXT() { return GetToken(GramaticaParser.TEXT, 0); }
+		public EtiquetaContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_compileUnit; } }
+		public override int RuleIndex { get { return RULE_etiqueta; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IGramaticaListener typedListener = listener as IGramaticaListener;
-			if (typedListener != null) typedListener.EnterCompileUnit(this);
+			if (typedListener != null) typedListener.EnterEtiqueta(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IGramaticaListener typedListener = listener as IGramaticaListener;
-			if (typedListener != null) typedListener.ExitCompileUnit(this);
+			if (typedListener != null) typedListener.ExitEtiqueta(this);
 		}
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IGramaticaVisitor<TResult> typedVisitor = visitor as IGramaticaVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitCompileUnit(this);
+			if (typedVisitor != null) return typedVisitor.VisitEtiqueta(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public CompileUnitContext compileUnit() {
-		CompileUnitContext _localctx = new CompileUnitContext(_ctx, State);
-		EnterRule(_localctx, 42, RULE_compileUnit);
+	public EtiquetaContext etiqueta() {
+		EtiquetaContext _localctx = new EtiquetaContext(_ctx, State);
+		EnterRule(_localctx, 52, RULE_etiqueta);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 152; Match(Eof);
+			State = 199; Match(TEXT);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.ReportError(this, re);
+			_errHandler.Recover(this, re);
+		}
+		finally {
+			ExitRule();
+		}
+		return _localctx;
+	}
+
+	public partial class ConstContext : ParserRuleContext {
+		public ITerminalNode CONSTHEX() { return GetToken(GramaticaParser.CONSTHEX, 0); }
+		public ITerminalNode CONSTCAD() { return GetToken(GramaticaParser.CONSTCAD, 0); }
+		public ConstContext(ParserRuleContext parent, int invokingState)
+			: base(parent, invokingState)
+		{
+		}
+		public override int RuleIndex { get { return RULE_const; } }
+		public override void EnterRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.EnterConst(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.ExitConst(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IGramaticaVisitor<TResult> typedVisitor = visitor as IGramaticaVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitConst(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+
+	[RuleVersion(0)]
+	public ConstContext @const() {
+		ConstContext _localctx = new ConstContext(_ctx, State);
+		EnterRule(_localctx, 54, RULE_const);
+		int _la;
+		try {
+			EnterOuterAlt(_localctx, 1);
+			{
+			State = 201;
+			_la = _input.La(1);
+			if ( !(_la==CONSTHEX || _la==CONSTCAD) ) {
+			_errHandler.RecoverInline(this);
+			} else {
+				if (_input.La(1) == TokenConstants.Eof) {
+					matchedEOF = true;
+				}
+
+				_errHandler.ReportMatch(this);
+				Consume();
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.ReportError(this, re);
+			_errHandler.Recover(this, re);
+		}
+		finally {
+			ExitRule();
+		}
+		return _localctx;
+	}
+
+	public partial class RegContext : ParserRuleContext {
+		public ITerminalNode REG() { return GetToken(GramaticaParser.REG, 0); }
+		public RegContext(ParserRuleContext parent, int invokingState)
+			: base(parent, invokingState)
+		{
+		}
+		public override int RuleIndex { get { return RULE_reg; } }
+		public override void EnterRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.EnterReg(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IGramaticaListener typedListener = listener as IGramaticaListener;
+			if (typedListener != null) typedListener.ExitReg(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IGramaticaVisitor<TResult> typedVisitor = visitor as IGramaticaVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitReg(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+
+	[RuleVersion(0)]
+	public RegContext reg() {
+		RegContext _localctx = new RegContext(_ctx, State);
+		EnterRule(_localctx, 56, RULE_reg);
+		try {
+			EnterOuterAlt(_localctx, 1);
+			{
+			State = 203; Match(REG);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1438,61 +1866,82 @@ public partial class GramaticaParser : Parser {
 	}
 
 	public static readonly string _serializedATN =
-		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\x1A\x9D\x4\x2\t"+
+		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\x1F\xD0\x4\x2\t"+
 		"\x2\x4\x3\t\x3\x4\x4\t\x4\x4\x5\t\x5\x4\x6\t\x6\x4\a\t\a\x4\b\t\b\x4\t"+
 		"\t\t\x4\n\t\n\x4\v\t\v\x4\f\t\f\x4\r\t\r\x4\xE\t\xE\x4\xF\t\xF\x4\x10"+
 		"\t\x10\x4\x11\t\x11\x4\x12\t\x12\x4\x13\t\x13\x4\x14\t\x14\x4\x15\t\x15"+
-		"\x4\x16\t\x16\x4\x17\t\x17\x3\x2\x3\x2\x3\x2\x3\x2\x3\x3\x3\x3\x3\x3\x3"+
-		"\x3\x3\x3\x3\x3\x5\x3\x39\n\x3\x3\x4\x3\x4\x3\x4\x5\x4>\n\x4\x3\x5\x5"+
-		"\x5\x41\n\x5\x3\x6\x3\x6\x3\x6\a\x6\x46\n\x6\f\x6\xE\x6I\v\x6\x3\a\x3"+
-		"\a\x5\aM\n\a\x3\b\x3\b\x3\b\x3\t\x3\t\x3\t\x3\t\x3\n\x3\n\x3\v\x5\vY\n"+
-		"\v\x3\f\x3\f\x3\f\x3\f\x5\f_\n\f\x3\r\x3\r\x3\xE\x3\xE\x3\xE\x3\xE\x3"+
-		"\xE\x3\xE\x3\xE\x3\xE\x3\xE\x5\xEl\n\xE\x3\xF\x3\xF\x3\xF\x5\xFq\n\xF"+
-		"\x3\x10\x3\x10\x3\x10\x3\x11\x3\x11\x3\x12\x3\x12\x3\x12\x5\x12{\n\x12"+
-		"\x3\x12\x5\x12~\n\x12\x3\x12\x5\x12\x81\n\x12\x3\x13\x3\x13\x3\x13\x3"+
-		"\x13\x3\x13\x3\x13\x5\x13\x89\n\x13\x3\x14\x3\x14\x3\x14\x3\x14\x3\x14"+
-		"\x3\x14\x5\x14\x91\n\x14\x3\x15\x3\x15\x3\x15\x3\x15\x5\x15\x97\n\x15"+
-		"\x3\x16\x3\x16\x3\x17\x3\x17\x3\x17\x2\x2\x2\x18\x2\x2\x4\x2\x6\x2\b\x2"+
-		"\n\x2\f\x2\xE\x2\x10\x2\x12\x2\x14\x2\x16\x2\x18\x2\x1A\x2\x1C\x2\x1E"+
-		"\x2 \x2\"\x2$\x2&\x2(\x2*\x2,\x2\x2\x4\x3\x2\b\f\x4\x2\x15\x15\x17\x17"+
-		"\x9C\x2.\x3\x2\x2\x2\x4\x38\x3\x2\x2\x2\x6:\x3\x2\x2\x2\b@\x3\x2\x2\x2"+
-		"\nG\x3\x2\x2\x2\fL\x3\x2\x2\x2\xEN\x3\x2\x2\x2\x10Q\x3\x2\x2\x2\x12U\x3"+
-		"\x2\x2\x2\x14X\x3\x2\x2\x2\x16^\x3\x2\x2\x2\x18`\x3\x2\x2\x2\x1A\x62\x3"+
-		"\x2\x2\x2\x1Cp\x3\x2\x2\x2\x1Er\x3\x2\x2\x2 u\x3\x2\x2\x2\"\x80\x3\x2"+
-		"\x2\x2$\x88\x3\x2\x2\x2&\x90\x3\x2\x2\x2(\x96\x3\x2\x2\x2*\x98\x3\x2\x2"+
-		"\x2,\x9A\x3\x2\x2\x2./\x5\x4\x3\x2/\x30\x5\n\x6\x2\x30\x31\x5\x6\x4\x2"+
-		"\x31\x3\x3\x2\x2\x2\x32\x33\x5\x14\v\x2\x33\x34\a\r\x2\x2\x34\x35\x5*"+
-		"\x16\x2\x35\x36\a\x13\x2\x2\x36\x39\x3\x2\x2\x2\x37\x39\x5\f\a\x2\x38"+
-		"\x32\x3\x2\x2\x2\x38\x37\x3\x2\x2\x2\x39\x5\x3\x2\x2\x2:;\a\xE\x2\x2;"+
-		"=\x5\b\x5\x2<>\a\x13\x2\x2=<\x3\x2\x2\x2=>\x3\x2\x2\x2>\a\x3\x2\x2\x2"+
-		"?\x41\a\x18\x2\x2@?\x3\x2\x2\x2@\x41\x3\x2\x2\x2\x41\t\x3\x2\x2\x2\x42"+
-		"\x43\x5\f\a\x2\x43\x44\a\x13\x2\x2\x44\x46\x3\x2\x2\x2\x45\x42\x3\x2\x2"+
-		"\x2\x46I\x3\x2\x2\x2G\x45\x3\x2\x2\x2GH\x3\x2\x2\x2H\v\x3\x2\x2\x2IG\x3"+
-		"\x2\x2\x2JM\x5\xE\b\x2KM\x5\x10\t\x2LJ\x3\x2\x2\x2LK\x3\x2\x2\x2M\r\x3"+
-		"\x2\x2\x2NO\x5\x14\v\x2OP\x5\x16\f\x2P\xF\x3\x2\x2\x2QR\x5\x14\v\x2RS"+
-		"\x5\x12\n\x2ST\x5(\x15\x2T\x11\x3\x2\x2\x2UV\t\x2\x2\x2V\x13\x3\x2\x2"+
-		"\x2WY\a\x18\x2\x2XW\x3\x2\x2\x2XY\x3\x2\x2\x2Y\x15\x3\x2\x2\x2Z_\x5\x18"+
-		"\r\x2[_\x5\x1A\xE\x2\\_\x5\x1C\xF\x2]_\x5\x1E\x10\x2^Z\x3\x2\x2\x2^[\x3"+
-		"\x2\x2\x2^\\\x3\x2\x2\x2^]\x3\x2\x2\x2_\x17\x3\x2\x2\x2`\x61\a\x10\x2"+
-		"\x2\x61\x19\x3\x2\x2\x2\x62k\a\x11\x2\x2\x63l\x5*\x16\x2\x64l\a\x14\x2"+
-		"\x2\x65\x66\a\x14\x2\x2\x66g\a\x3\x2\x2gl\a\x14\x2\x2hi\a\x14\x2\x2ij"+
-		"\a\x3\x2\x2jl\x5*\x16\x2k\x63\x3\x2\x2\x2k\x64\x3\x2\x2\x2k\x65\x3\x2"+
-		"\x2\x2kh\x3\x2\x2\x2l\x1B\x3\x2\x2\x2mq\x5\"\x12\x2nq\x5$\x13\x2oq\x5"+
-		"&\x14\x2pm\x3\x2\x2\x2pn\x3\x2\x2\x2po\x3\x2\x2\x2q\x1D\x3\x2\x2\x2rs"+
-		"\a\x4\x2\x2st\x5\x1C\xF\x2t\x1F\x3\x2\x2\x2uv\a\xF\x2\x2v!\x3\x2\x2\x2"+
-		"wz\a\x12\x2\x2x{\a\x18\x2\x2y{\x5*\x16\x2zx\x3\x2\x2\x2zy\x3\x2\x2\x2"+
-		"{}\x3\x2\x2\x2|~\x5 \x11\x2}|\x3\x2\x2\x2}~\x3\x2\x2\x2~\x81\x3\x2\x2"+
-		"\x2\x7F\x81\a\x5\x2\x2\x80w\x3\x2\x2\x2\x80\x7F\x3\x2\x2\x2\x81#\x3\x2"+
-		"\x2\x2\x82\x83\a\x12\x2\x2\x83\x84\a\x6\x2\x2\x84\x89\x5*\x16\x2\x85\x86"+
-		"\a\x12\x2\x2\x86\x87\a\x6\x2\x2\x87\x89\a\x18\x2\x2\x88\x82\x3\x2\x2\x2"+
-		"\x88\x85\x3\x2\x2\x2\x89%\x3\x2\x2\x2\x8A\x8B\a\x12\x2\x2\x8B\x8C\a\a"+
-		"\x2\x2\x8C\x91\x5*\x16\x2\x8D\x8E\a\x12\x2\x2\x8E\x8F\a\a\x2\x2\x8F\x91"+
-		"\a\x18\x2\x2\x90\x8A\x3\x2\x2\x2\x90\x8D\x3\x2\x2\x2\x91\'\x3\x2\x2\x2"+
-		"\x92\x97\x5*\x16\x2\x93\x97\a\x19\x2\x2\x94\x97\a\x1A\x2\x2\x95\x97\a"+
-		"\x18\x2\x2\x96\x92\x3\x2\x2\x2\x96\x93\x3\x2\x2\x2\x96\x94\x3\x2\x2\x2"+
-		"\x96\x95\x3\x2\x2\x2\x97)\x3\x2\x2\x2\x98\x99\t\x3\x2\x2\x99+\x3\x2\x2"+
-		"\x2\x9A\x9B\a\x2\x2\x3\x9B-\x3\x2\x2\x2\x11\x38=@GLX^kpz}\x80\x88\x90"+
-		"\x96";
+		"\x4\x16\t\x16\x4\x17\t\x17\x4\x18\t\x18\x4\x19\t\x19\x4\x1A\t\x1A\x4\x1B"+
+		"\t\x1B\x4\x1C\t\x1C\x4\x1D\t\x1D\x4\x1E\t\x1E\x3\x2\x3\x2\x3\x2\x3\x2"+
+		"\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x4\x3\x4\x5\x4H\n\x4\x3\x4\x5\x4K\n"+
+		"\x4\x3\x5\x3\x5\x3\x5\a\x5P\n\x5\f\x5\xE\x5S\v\x5\x3\x6\x3\x6\x5\x6W\n"+
+		"\x6\x3\a\x3\a\x3\b\x5\b\\\n\b\x3\b\x3\b\x3\t\x3\t\x3\t\x3\t\x3\t\x5\t"+
+		"\x65\n\t\x3\n\x3\n\x3\n\x3\v\x3\v\x3\v\x3\f\x3\f\x3\f\x3\r\x3\r\x3\r\x3"+
+		"\xE\x3\xE\x3\xE\x3\xF\x5\xFw\n\xF\x3\xF\x3\xF\x3\x10\x3\x10\x3\x10\x3"+
+		"\x10\x5\x10\x7F\n\x10\x3\x11\x3\x11\x3\x12\x3\x12\x3\x12\x3\x12\x3\x12"+
+		"\x3\x12\x3\x12\x3\x12\x3\x12\x3\x12\x3\x12\x3\x12\x3\x12\x3\x12\x5\x12"+
+		"\x91\n\x12\x3\x13\x3\x13\x3\x13\x5\x13\x96\n\x13\x3\x14\x3\x14\x3\x14"+
+		"\x5\x14\x9B\n\x14\x3\x15\x3\x15\x3\x15\x5\x15\xA0\n\x15\x3\x15\x5\x15"+
+		"\xA3\n\x15\x3\x15\x5\x15\xA6\n\x15\x3\x16\x3\x16\x3\x16\x3\x16\x3\x16"+
+		"\x3\x16\x5\x16\xAE\n\x16\x3\x17\x3\x17\x3\x17\x3\x17\x3\x17\x3\x17\x5"+
+		"\x17\xB6\n\x17\x3\x18\x3\x18\x3\x18\x5\x18\xBB\n\x18\x3\x18\x5\x18\xBE"+
+		"\n\x18\x3\x19\x3\x19\x3\x19\x3\x19\x3\x1A\x3\x1A\x3\x1A\x3\x1A\x3\x1B"+
+		"\x3\x1B\x3\x1C\x3\x1C\x3\x1D\x3\x1D\x3\x1E\x3\x1E\x3\x1E\x2\x2\x2\x1F"+
+		"\x2\x2\x4\x2\x6\x2\b\x2\n\x2\f\x2\xE\x2\x10\x2\x12\x2\x14\x2\x16\x2\x18"+
+		"\x2\x1A\x2\x1C\x2\x1E\x2 \x2\"\x2$\x2&\x2(\x2*\x2,\x2.\x2\x30\x2\x32\x2"+
+		"\x34\x2\x36\x2\x38\x2:\x2\x2\x5\x3\x2\x3\x4\x4\x2\x1A\x1A\x1C\x1C\x3\x2"+
+		"\x1E\x1F\xCD\x2<\x3\x2\x2\x2\x4@\x3\x2\x2\x2\x6\x45\x3\x2\x2\x2\bQ\x3"+
+		"\x2\x2\x2\nV\x3\x2\x2\x2\fX\x3\x2\x2\x2\xE[\x3\x2\x2\x2\x10\x64\x3\x2"+
+		"\x2\x2\x12\x66\x3\x2\x2\x2\x14i\x3\x2\x2\x2\x16l\x3\x2\x2\x2\x18o\x3\x2"+
+		"\x2\x2\x1Ar\x3\x2\x2\x2\x1Cv\x3\x2\x2\x2\x1E~\x3\x2\x2\x2 \x80\x3\x2\x2"+
+		"\x2\"\x90\x3\x2\x2\x2$\x95\x3\x2\x2\x2&\x9A\x3\x2\x2\x2(\xA5\x3\x2\x2"+
+		"\x2*\xAD\x3\x2\x2\x2,\xB5\x3\x2\x2\x2.\xBD\x3\x2\x2\x2\x30\xBF\x3\x2\x2"+
+		"\x2\x32\xC3\x3\x2\x2\x2\x34\xC7\x3\x2\x2\x2\x36\xC9\x3\x2\x2\x2\x38\xCB"+
+		"\x3\x2\x2\x2:\xCD\x3\x2\x2\x2<=\x5\x4\x3\x2=>\x5\b\x5\x2>?\x5\x6\x4\x2"+
+		"?\x3\x3\x2\x2\x2@\x41\x5\x36\x1C\x2\x41\x42\a\xE\x2\x2\x42\x43\x5\x34"+
+		"\x1B\x2\x43\x44\x5\f\a\x2\x44\x5\x3\x2\x2\x2\x45G\a\xF\x2\x2\x46H\x5\x36"+
+		"\x1C\x2G\x46\x3\x2\x2\x2GH\x3\x2\x2\x2HJ\x3\x2\x2\x2IK\x5\f\a\x2JI\x3"+
+		"\x2\x2\x2JK\x3\x2\x2\x2K\a\x3\x2\x2\x2LM\x5\n\x6\x2MN\x5\f\a\x2NP\x3\x2"+
+		"\x2\x2OL\x3\x2\x2\x2PS\x3\x2\x2\x2QO\x3\x2\x2\x2QR\x3\x2\x2\x2R\t\x3\x2"+
+		"\x2\x2SQ\x3\x2\x2\x2TW\x5\x1C\xF\x2UW\x5\xE\b\x2VT\x3\x2\x2\x2VU\x3\x2"+
+		"\x2\x2W\v\x3\x2\x2\x2XY\a\x18\x2\x2Y\r\x3\x2\x2\x2Z\\\x5\x36\x1C\x2[Z"+
+		"\x3\x2\x2\x2[\\\x3\x2\x2\x2\\]\x3\x2\x2\x2]^\x5\x10\t\x2^\xF\x3\x2\x2"+
+		"\x2_\x65\x5\x12\n\x2`\x65\x5\x14\v\x2\x61\x65\x5\x16\f\x2\x62\x65\x5\x18"+
+		"\r\x2\x63\x65\x5\x1A\xE\x2\x64_\x3\x2\x2\x2\x64`\x3\x2\x2\x2\x64\x61\x3"+
+		"\x2\x2\x2\x64\x62\x3\x2\x2\x2\x64\x63\x3\x2\x2\x2\x65\x11\x3\x2\x2\x2"+
+		"\x66g\a\r\x2\x2gh\x5\x38\x1D\x2h\x13\x3\x2\x2\x2ij\a\f\x2\x2jk\x5\x34"+
+		"\x1B\x2k\x15\x3\x2\x2\x2lm\a\v\x2\x2mn\x5\x34\x1B\x2n\x17\x3\x2\x2\x2"+
+		"op\a\n\x2\x2pq\x5\x34\x1B\x2q\x19\x3\x2\x2\x2rs\a\t\x2\x2st\x5\x36\x1C"+
+		"\x2t\x1B\x3\x2\x2\x2uw\x5\x36\x1C\x2vu\x3\x2\x2\x2vw\x3\x2\x2\x2wx\x3"+
+		"\x2\x2\x2xy\x5\x1E\x10\x2y\x1D\x3\x2\x2\x2z\x7F\x5 \x11\x2{\x7F\x5\"\x12"+
+		"\x2|\x7F\x5$\x13\x2}\x7F\x5&\x14\x2~z\x3\x2\x2\x2~{\x3\x2\x2\x2~|\x3\x2"+
+		"\x2\x2~}\x3\x2\x2\x2\x7F\x1F\x3\x2\x2\x2\x80\x81\a\x11\x2\x2\x81!\x3\x2"+
+		"\x2\x2\x82\x83\a\x12\x2\x2\x83\x84\x5:\x1E\x2\x84\x85\a\x10\x2\x2\x85"+
+		"\x86\x5:\x1E\x2\x86\x91\x3\x2\x2\x2\x87\x88\a\x13\x2\x2\x88\x91\x5:\x1E"+
+		"\x2\x89\x8A\a\x14\x2\x2\x8A\x8B\x5:\x1E\x2\x8B\x8C\a\x10\x2\x2\x8C\x8D"+
+		"\x5\x34\x1B\x2\x8D\x91\x3\x2\x2\x2\x8E\x8F\a\x15\x2\x2\x8F\x91\x5\x34"+
+		"\x1B\x2\x90\x82\x3\x2\x2\x2\x90\x87\x3\x2\x2\x2\x90\x89\x3\x2\x2\x2\x90"+
+		"\x8E\x3\x2\x2\x2\x91#\x3\x2\x2\x2\x92\x96\x5(\x15\x2\x93\x96\x5*\x16\x2"+
+		"\x94\x96\x5,\x17\x2\x95\x92\x3\x2\x2\x2\x95\x93\x3\x2\x2\x2\x95\x94\x3"+
+		"\x2\x2\x2\x96%\x3\x2\x2\x2\x97\x9B\x5.\x18\x2\x98\x9B\x5\x30\x19\x2\x99"+
+		"\x9B\x5\x32\x1A\x2\x9A\x97\x3\x2\x2\x2\x9A\x98\x3\x2\x2\x2\x9A\x99\x3"+
+		"\x2\x2\x2\x9B\'\x3\x2\x2\x2\x9C\x9F\a\x16\x2\x2\x9D\xA0\a\x1D\x2\x2\x9E"+
+		"\xA0\x5\x34\x1B\x2\x9F\x9D\x3\x2\x2\x2\x9F\x9E\x3\x2\x2\x2\xA0\xA2\x3"+
+		"\x2\x2\x2\xA1\xA3\t\x2\x2\x2\xA2\xA1\x3\x2\x2\x2\xA2\xA3\x3\x2\x2\x2\xA3"+
+		"\xA6\x3\x2\x2\x2\xA4\xA6\a\x5\x2\x2\xA5\x9C\x3\x2\x2\x2\xA5\xA4\x3\x2"+
+		"\x2\x2\xA6)\x3\x2\x2\x2\xA7\xA8\a\x16\x2\x2\xA8\xA9\a\x6\x2\x2\xA9\xAE"+
+		"\x5\x34\x1B\x2\xAA\xAB\a\x16\x2\x2\xAB\xAC\a\x6\x2\x2\xAC\xAE\a\x1D\x2"+
+		"\x2\xAD\xA7\x3\x2\x2\x2\xAD\xAA\x3\x2\x2\x2\xAE+\x3\x2\x2\x2\xAF\xB0\a"+
+		"\x16\x2\x2\xB0\xB1\a\a\x2\x2\xB1\xB6\x5\x34\x1B\x2\xB2\xB3\a\x16\x2\x2"+
+		"\xB3\xB4\a\a\x2\x2\xB4\xB6\a\x1D\x2\x2\xB5\xAF\x3\x2\x2\x2\xB5\xB2\x3"+
+		"\x2\x2\x2\xB6-\x3\x2\x2\x2\xB7\xB8\a\x17\x2\x2\xB8\xBA\a\x1D\x2\x2\xB9"+
+		"\xBB\t\x2\x2\x2\xBA\xB9\x3\x2\x2\x2\xBA\xBB\x3\x2\x2\x2\xBB\xBE\x3\x2"+
+		"\x2\x2\xBC\xBE\a\b\x2\x2\xBD\xB7\x3\x2\x2\x2\xBD\xBC\x3\x2\x2\x2\xBE/"+
+		"\x3\x2\x2\x2\xBF\xC0\a\x17\x2\x2\xC0\xC1\a\x6\x2\x2\xC1\xC2\a\x1D\x2\x2"+
+		"\xC2\x31\x3\x2\x2\x2\xC3\xC4\a\x17\x2\x2\xC4\xC5\a\a\x2\x2\xC5\xC6\a\x1D"+
+		"\x2\x2\xC6\x33\x3\x2\x2\x2\xC7\xC8\t\x3\x2\x2\xC8\x35\x3\x2\x2\x2\xC9"+
+		"\xCA\a\x1D\x2\x2\xCA\x37\x3\x2\x2\x2\xCB\xCC\t\x4\x2\x2\xCC\x39\x3\x2"+
+		"\x2\x2\xCD\xCE\a\x19\x2\x2\xCE;\x3\x2\x2\x2\x14GJQV[\x64v~\x90\x95\x9A"+
+		"\x9F\xA2\xA5\xAD\xB5\xBA\xBD";
 	public static readonly ATN _ATN =
 		new ATNDeserializer().Deserialize(_serializedATN.ToCharArray());
 }

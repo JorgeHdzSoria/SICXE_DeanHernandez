@@ -1,6 +1,6 @@
-E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaLexer.cs
-E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaParser.cs
-E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaListener.cs
-E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaBaseListener.cs
-E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaVisitor.cs
-E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\prac3\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaBaseVisitor.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaLexer.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaParser.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaListener.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaBaseListener.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaVisitor.cs
+E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaBaseVisitor.cs
