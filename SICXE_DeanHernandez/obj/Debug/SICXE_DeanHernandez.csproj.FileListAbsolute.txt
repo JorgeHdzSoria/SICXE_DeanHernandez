@@ -96,3 +96,25 @@ E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas
 E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaBaseVisitor.cs
 E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.CopyComplete
 E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csprojAssemblyReference.cache
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.exe.config
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.exe
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.pdb
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr3.Runtime.dll
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr4.Runtime.dll
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr3.Runtime.pdb
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\Antlr4.Runtime.xml
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csprojAssemblyReference.cache
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaLexer.cs
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaParser.cs
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaListener.cs
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaBaseListener.cs
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaVisitor.cs
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaBaseVisitor.cs
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.Antlr4GeneratedCodeFileListAbsolute.txt
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.SICXE.resources
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.Properties.Resources.resources
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.GenerateResource.cache
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.CoreCompileInputs.cache
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.CopyComplete
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.exe
+C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.pdb

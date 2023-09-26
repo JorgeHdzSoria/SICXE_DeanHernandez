@@ -55,7 +55,7 @@ namespace SICXE_DeanHernandez
             for(int i = 0; i < textBox_codigo.Lines.Length; i++)
             {
                 //MessageBox.Show(textBox_codigo.Lines[i]);
-                String trim = textBox_codigo.Lines[i].Trim();
+                String trim = textBox_codigo.Lines[i].Trim(); //Quita todos los espacios en blanco sobrantes antes y despues del string
                 if (trim != "")
                     codigo.Add(new List<string> { trim });
                 //MessageBox.Show(trim);
@@ -126,31 +126,39 @@ namespace SICXE_DeanHernandez
                 r.Cells[2].Value = ContadorPrograma; //La tercera celda toma el valor del CP
 
                 // Codigos lexicos
-                /* T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, BASE = 7, RESW = 8, RESB = 9, 
+                /* T__0 = 1, T__1 = 2, RSUB = 3, @ = 4, # = 5, +RSUB = 6, BASE = 7, RESW = 8, RESB = 9, 
 		        WORD = 10, BYTE = 11, START = 12, END = 13, COMA = 14, INSTR1 = 15, INSTR2_r1r2 = 16, 
 		        INSTR2_r1 = 17, INSTR2_r1n = 18, INSTR2_n = 19, INSTR3 = 20, INSTR4 = 21, FINL = 22, 
 		        REG = 23, NUMDEC = 24, NUMHEX_sh = 25, NUMHEX = 26, TEXT = 27, CONSTHEX = 28, CONSTCAD = 29;
                 */
-
-                //T__2 = 3 = RSUB
-                //T__6 = 6 = +RSUB
-                //T__5 = 5 = #
 
                 //  INSTRUCCIONES / DIRECTIVAS
                 /* 7 a 11 son directivas "operadores", Start es 12 y end es 13*/
                 /* 15 a 21 son instrucciones de formatos que varian*/
 
 
+                //MessageBox.Show(parseTree.ToStringTree());
+                //int syntax = parseTree.SourceInterval.Length;
+                //MessageBox.Show(tokens.GetTokens + ' ' + syntax);
+
+                /*foreach (IToken token in t)
+                    {
+                        MessageBox.Show(token.ToString() + token.Type);
+                    }*/
+
+                //MessageBox.Show(t[0].Type.ToString());
+
+
+
                 if (i == 0)
                 {
                     IParseTree parseTree = parser.inicio();       // Verifica si pertenece a inicio
-                    //MessageBox.Show(parseTree.ToStringTree());
-                    //int syntax = parseTree.SourceInterval.Length;
-                    //MessageBox.Show(tokens.GetTokens + ' ' + syntax);
-                    foreach(IToken t in tokens.GetTokens())
-                    {
-                        MessageBox.Show(t.ToString() + t.Type);
-                    }
+                    r.Cells[1].Value = "---";
+                    r.Cells[6].Value = "---";
+                    
+                    IList<IToken> t = tokens.GetTokens();
+                    if (t[0].Type.ToString() == "27")
+                        r.Cells[3].Value = t[0].Text;
 
                     if (ListaErrores.Count > 0)
                     {
@@ -161,11 +169,10 @@ namespace SICXE_DeanHernandez
                 else if( i == codigo.Count - 1)
                 {
                     IParseTree parseTree = parser.fin();                // Verifica si pertenece a fin/end
-                    foreach (IToken t in tokens.GetTokens())
-                    {
-                        MessageBox.Show(t.ToString() + t.Type);
-                    }
+                    r.Cells[1].Value = "---";
+                    r.Cells[6].Value = "---";
 
+                    IList<IToken> t = tokens.GetTokens();
                     if (ListaErrores.Count > 0)
                     {
                         r.Cells[6].Value = "Error de sintaxis";
@@ -173,11 +180,14 @@ namespace SICXE_DeanHernandez
                 }
                 else
                 {
-                    IParseTree parseTree = parser.proposicion();       // Verifica si pertenece a proposicion
-                    foreach (IToken t in tokens.GetTokens())
-                    {
-                        MessageBox.Show(t.ToString() + t.Type);
-                    }
+                    IParseTree parseTree = parser.proposicion();        // Verifica si pertenece a proposicion
+                    IList<IToken> t = tokens.GetTokens();               // Obtener todos los tokens
+                    if (t[0].Type.ToString() == "27")                   // Identificar si el primer token es etiqueta y lo agrega a la columan ETIQ
+                        r.Cells[3].Value = t[0].Text;
+
+                    r.Cells[1].Value = RegresarFormato(t);
+                    r.Cells[4].Value = RegresarInstruccion(t);
+
 
                     if (ListaErrores.Count > 0)
                     {
@@ -188,7 +198,80 @@ namespace SICXE_DeanHernandez
             }
         }
 
+        String RegresarFormato(IList<IToken> t)
+        {
+            int cont = 0;
+            String ret = "---"; //Por default se considera directiva
+            //Formato1: 15 , Formato2: 16-19 , Formato3: 20 , Formato4: 21
+            foreach(IToken token in t)
+            {
+                switch (token.Type.ToString())
+                {
+                    case "15": ret = "1";
+                        cont++;
+                        break;
+                    case "16": ret = "2";
+                        cont++;
+                        break;
+                    case "17": ret = "2";
+                        cont++;
+                        break;
+                    case "18": ret = "2";
+                        cont++;
+                        break;
+                    case "19": ret = "2";
+                        cont++;
+                        break;
+                    case "20": ret = "3";
+                        cont++;
+                        break;
+                    case "3": ret = "3"; //Caso especial de RSUB
+                        cont++;
+                        break;
+                    case "21": ret = "4";
+                        cont++;
+                        break;
+                    case "6": ret = "4"; //Caso especial de +RSUB
+                        cont++;
+                        break;
+                    default: break;
+                }
+            }
+            if (cont <= 1)
+                return ret;
+            else
+                return "Error";
+        }
 
+        String RegresarInstruccion(IList<IToken> t)
+        {
+            int cont = 0;
+            String ret = "";
+            //Formato1: 15 , Formato2: 16-19 , Formato3: 20 , Formato4: 21
+            foreach (IToken token in t)
+            {
+                if(token.Type == 3 || token.Type == 6 || (token.Type >= 7 && token.Type <= 11) ||(token.Type >= 15 && token.Type <= 21) )
+                {
+                    ret = token.Text;
+                    cont++;
+                }
+            }
+            if (cont == 1)
+                return ret;
+            else
+                return "Error";
+        }
+
+        List<String> RegresarOperandos(IList<IToken> t)
+        {
+            List<String> Operandos = new List<String>();
+            foreach (IToken token in t)
+            {
+                if (token.Type == 4 || token.Type == 5 || (token.Type >= 23 && token.Type <= 29))
+                    Operandos.Add(token.Text);
+            }
+            return Operandos;
+        }
 
         #endregion
     }
