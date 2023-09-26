@@ -252,12 +252,15 @@
             // 
             // dGV_Sim
             // 
+            this.dGV_Sim.AllowUserToAddRows = false;
+            this.dGV_Sim.AllowUserToDeleteRows = false;
             this.dGV_Sim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Sim.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Simbolo,
             this.Direccion});
             this.dGV_Sim.Location = new System.Drawing.Point(7, 34);
             this.dGV_Sim.Name = "dGV_Sim";
+            this.dGV_Sim.ReadOnly = true;
             this.dGV_Sim.Size = new System.Drawing.Size(243, 364);
             this.dGV_Sim.TabIndex = 0;
             // 

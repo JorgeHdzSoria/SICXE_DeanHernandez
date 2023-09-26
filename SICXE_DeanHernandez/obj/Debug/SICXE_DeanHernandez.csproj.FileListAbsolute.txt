@@ -95,7 +95,6 @@ E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas
 E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaVisitor.cs
 E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\GramaticaBaseVisitor.cs
 E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csproj.CopyComplete
-E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csprojAssemblyReference.cache
 C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.exe.config
 C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.exe
 C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\bin\Debug\SICXE_DeanHernandez.pdb

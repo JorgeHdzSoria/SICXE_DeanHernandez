@@ -14,7 +14,7 @@ namespace SICXE_DeanHernandez
         String Archivo;
         List<List<String>> codigo; //Lista de lista de strings, el primer string de cada lista (dentro del conjunto de listas) es la linea original de codigo, lo que le siguen son tokens
         public static List<string> ListaErrores = new List<string>();
-        HashSet<string> Set_TabSim;
+        //HashSet<string> Set_TabSim;
         Dictionary<String, String> TabSim;
 
         public SICXE()
@@ -50,6 +50,7 @@ namespace SICXE_DeanHernandez
             textBox_errores.Text = "";                              //Reiniciar textbox de errores
             dGV_Sim.Rows.Clear();
             dGV_int.Rows.Clear();
+            TabSim = new Dictionary<string, string>();
 
             codigo = new List<List<String>>();                      //En la lista de codigo agrega todo uno por uno para su uso mas adelante en paso 1
             for(int i = 0; i < textBox_codigo.Lines.Length; i++)
@@ -121,12 +122,12 @@ namespace SICXE_DeanHernandez
                 ListaErrores = new List<string>();
 
                 DataGridViewRow r = new DataGridViewRow();  
-                r.CreateCells(dGV_int);     //Crea las celdas en el nuevo row de acuerdo a las columnas existentes en el datagridview que le pasas
-                r.Cells[0].Value = i;       //La primera celda toma el valor de linea actual
-                r.Cells[2].Value = ContadorPrograma; //La tercera celda toma el valor del CP
+                r.CreateCells(dGV_int);                                     //Crea las celdas en el nuevo row de acuerdo a las columnas existentes en el datagridview que le pasas
+                r.Cells[0].Value = i;                                       //La primera celda toma el valor de linea actual
+                r.Cells[2].Value = Convert.ToString(ContadorPrograma, 16);  //La tercera celda toma el valor del CP, convierte el decimal en hexadecimal
 
                 // Codigos lexicos
-                /* T__0 = 1, T__1 = 2, RSUB = 3, @ = 4, # = 5, +RSUB = 6, BASE = 7, RESW = 8, RESB = 9, 
+                /* ",X" = 1, ", X" = 2, RSUB = 3, @ = 4, # = 5, +RSUB = 6, BASE = 7, RESW = 8, RESB = 9, 
 		        WORD = 10, BYTE = 11, START = 12, END = 13, COMA = 14, INSTR1 = 15, INSTR2_r1r2 = 16, 
 		        INSTR2_r1 = 17, INSTR2_r1n = 18, INSTR2_n = 19, INSTR3 = 20, INSTR4 = 21, FINL = 22, 
 		        REG = 23, NUMDEC = 24, NUMHEX_sh = 25, NUMHEX = 26, TEXT = 27, CONSTHEX = 28, CONSTCAD = 29;
@@ -147,12 +148,10 @@ namespace SICXE_DeanHernandez
                     }*/
 
                 //MessageBox.Show(t[0].Type.ToString());
-
-
-
+                
                 if (i == 0)
                 {
-                    IParseTree parseTree = parser.inicio();       // Verifica si pertenece a inicio
+                    IParseTree parseTree = parser.inicio();             // Verifica si pertenece a inicio
                     r.Cells[1].Value = "---";
                     r.Cells[6].Value = "---";
                     
@@ -162,9 +161,15 @@ namespace SICXE_DeanHernandez
 
                     if (ListaErrores.Count > 0)
                     {
-                        r.Cells[6].Value = "Error de sintaxis";
+                        r.Cells[6].Value = "Error: Sintaxis";
                     }
-
+                    else
+                    {
+                        r.Cells[4].Value = t[1].Text;
+                        List<String> op = RegresarOperandos(t);
+                        if (op.Count == 1)
+                            r.Cells[5].Value = op[0];
+                    }
                 }
                 else if( i == codigo.Count - 1)
                 {
@@ -175,23 +180,161 @@ namespace SICXE_DeanHernandez
                     IList<IToken> t = tokens.GetTokens();
                     if (ListaErrores.Count > 0)
                     {
-                        r.Cells[6].Value = "Error de sintaxis";
+                        r.Cells[6].Value = "Error: Sintaxis";
                     }
+                    else
+                    {
+                        r.Cells[4].Value = t[0].Text;
+                        List<String> op = RegresarOperandos(t);
+                        if (op.Count == 1)
+                            r.Cells[5].Value = op[0];
+                    }
+                        
                 }
                 else
                 {
+                    r.Cells[6].Value = "---";
                     IParseTree parseTree = parser.proposicion();        // Verifica si pertenece a proposicion
                     IList<IToken> t = tokens.GetTokens();               // Obtener todos los tokens
+                    bool ErrorSimboloDuplicado = false;
                     if (t[0].Type.ToString() == "27")                   // Identificar si el primer token es etiqueta y lo agrega a la columan ETIQ
+                    {
                         r.Cells[3].Value = t[0].Text;
+                        if (!TabSim.ContainsKey(t[0].Text))
+                        {
+                            TabSim.Add(t[0].Text, ContadorPrograma.ToString());
+                            DataGridViewRow rs = new DataGridViewRow();
+                            rs.CreateCells(dGV_Sim);                    //Crea las celdas en el nuevo row de acuerdo a las columnas existentes en el datagridview que le pasas
+                            rs.Cells[0].Value = t[0].Text;
+                            rs.Cells[1].Value = Convert.ToString(ContadorPrograma, 16);
+                            dGV_Sim.Rows.Add(rs);                       //Agregar renglon en tabla datagridView de Archivo intermedio
+                        }
+                        else
+                            ErrorSimboloDuplicado = true;               //No debe insertarse en tabla de sim y da error en la linea
+                    }
 
-                    r.Cells[1].Value = RegresarFormato(t);
-                    r.Cells[4].Value = RegresarInstruccion(t);
+                    r.Cells[1].Value = RegresarFormato(t);              //Determinar que rellenar en la columna formato
+                    r.Cells[4].Value = RegresarInstruccion(t);          //Determinar que rellenar en la columna instruccion
+                    List<String> op = RegresarOperandos(t);             //Determinar que rellenar en la columna operandos
+                    foreach (String o in op)
+                        r.Cells[5].Value += o;
 
+                    //Determinar tipo de formato si es formato 3 o 4
+                    if(r.Cells[5].Value != null && (r.Cells[1].Value.ToString() == "3" || r.Cells[1].Value.ToString() == "4"))
+                    {
+                        if (r.Cells[5].Value.ToString().Contains("#"))
+                            r.Cells[6].Value = "Inmediato";
+                        else if (r.Cells[5].Value.ToString().Contains("@"))
+                            r.Cells[6].Value = "Indirecto";
+                        else
+                            r.Cells[6].Value = "Simple";
+                    }
 
+                    //Tratar con operandos de mas en instrucciones RSUB
+                    if(r.Cells[4].Value.ToString().Contains("RSUB") || r.Cells[4].Value.ToString().Contains("+RSUB"))
+                    {
+                        if(r.Cells[5].Value == null)
+                            r.Cells[6].Value = "Simple";
+                        else if(r.Cells[5].Value.ToString() == "")
+                            r.Cells[6].Value = "Simple";
+                        else
+                            r.Cells[6].Value = "Error: Sintaxis";
+                    }
+
+                    //Tratar con operandos en formato 1, dar error
+                    if (r.Cells[1].Value.ToString() == "1")
+                    {
+                        if (r.Cells[5].Value != null)
+                        {
+                            if (r.Cells[5].Value.ToString() != "")
+                                r.Cells[6].Value = "Error: Sintaxis";
+                        }
+                    }
+
+                    //Tratar con errores
                     if (ListaErrores.Count > 0)
                     {
-                        r.Cells[6].Value = "Error de sintaxis";
+                        if (r.Cells[4].Value.ToString() == "Error")
+                            r.Cells[6].Value = "Error: Instruccion no existe";
+                        else
+                            r.Cells[6].Value = "Error: Sintaxis";
+                    }
+                    else if(ErrorSimboloDuplicado)
+                        r.Cells[6].Value = "Error: Simbolo Duplicado";
+
+                    //Incremento de CP para formato 1-4 y directivas
+                    if(!(r.Cells[1].Value.ToString() == "Error" || r.Cells[6].Value.ToString() == "Error: Sintaxis" || r.Cells[1].Value.ToString() == "Error: Instruccion no existe"))
+                    {
+                        switch (r.Cells[1].Value.ToString())
+                        {
+                            case "1":
+                                ContadorPrograma += 1;
+                                break;
+                            case "2":
+                                ContadorPrograma += 2;
+                                break;
+                            case "3":
+                                ContadorPrograma += 3;
+                                break;
+                            case "4":
+                                ContadorPrograma += 4;
+                                break;
+                            case "---": //Directiva
+                                {
+                                    switch (r.Cells[4].Value.ToString())
+                                    {
+                                        case "BASE": //nada
+                                            break;
+                                        case "RESW":
+                                            String s = r.Cells[5].Value.ToString();
+                                            if(s.Last() == 'h' || s.Last() == 'H')
+                                            {
+                                                s = s.Remove(s.Length-1,1);//Remover letra
+                                                ContadorPrograma += Convert.ToInt32(s, 16) * 3;
+                                            }
+                                            else
+                                            {
+                                                ContadorPrograma += Int32.Parse(r.Cells[5].Value.ToString()) * 3;
+                                            }
+                                            break;
+                                        case "RESB":
+                                            String s2 = r.Cells[5].Value.ToString();
+                                            if (s2.Last() == 'h' || s2.Last() == 'H')
+                                            {
+                                                s2 = s2.Remove(s2.Length - 1, 1);//Remover letra
+                                                ContadorPrograma += Convert.ToInt32(s2, 16);
+                                            }
+                                            else
+                                            {
+                                                ContadorPrograma += Int32.Parse(r.Cells[5].Value.ToString());
+                                            }
+                                            break;
+                                        case "WORD":
+                                            ContadorPrograma += 3;
+                                            break;
+                                        case "BYTE":
+                                            String s3 = r.Cells[5].Value.ToString();
+                                            if(s3.First() == 'X')
+                                            {
+                                                int calculo = (s3.Length - 3) / 2;
+                                                if ((s3.Length - 3) % 2 == 1)
+                                                    calculo++;
+                                                ContadorPrograma += calculo;
+                                            }
+                                            else if(s3.First() == 'C')
+                                            {
+                                                int calculo = s3.Length - 3;
+                                                ContadorPrograma += calculo;
+                                            }
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+                                break;
+                            default:
+                                break;
+                        }
                     }
                 }
                 dGV_int.Rows.Add(r);    //Agregar renglon en tabla datagridView de Archivo intermedio
@@ -265,10 +408,10 @@ namespace SICXE_DeanHernandez
         List<String> RegresarOperandos(IList<IToken> t)
         {
             List<String> Operandos = new List<String>();
-            foreach (IToken token in t)
+            for(int i = 0; i < t.Count; i++)
             {
-                if (token.Type == 4 || token.Type == 5 || (token.Type >= 23 && token.Type <= 29))
-                    Operandos.Add(token.Text);
+                if (i != 0 && (t[i].Type == 1 || t[i].Type == 2 || t[i].Type == 4 || t[i].Type == 5 || t[i].Type == 14 || (t[i].Type >= 23 && t[i].Type <= 29)) )
+                    Operandos.Add(t[i].Text);
             }
             return Operandos;
         }

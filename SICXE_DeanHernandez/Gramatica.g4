@@ -28,7 +28,7 @@ base		:		BASE etiqueta;
 instruccion	:    	etiqueta? formato;
 formato    	:    	f1 | f2 | f3 | f4;
 f1    		:    	INSTR1;
-f2    		:    	INSTR2_r1r2(reg COMA reg) | INSTR2_r1(reg) | INSTR2_r1n(reg COMA num) | INSTR2_n(num); 
+f2    		:    	INSTR2_r1r2(reg COMA reg) | INSTR2_r1r2(reg (',X'|', X')) |INSTR2_r1(reg) | INSTR2_r1n(reg COMA num) | INSTR2_n(num); 
 f3    		:    	simple3 | indirecto3 | inmediato3;
 f4    		:    	simple4 | indirecto4 | inmediato4;
 //Modos de direccionamiento (instrucciones)
