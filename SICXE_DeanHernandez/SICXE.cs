@@ -109,6 +109,17 @@ namespace SICXE_DeanHernandez
 
         #region Entrega 3
 
+        // Codigos lexicos
+        /* ",X" = 1, ", X" = 2, RSUB = 3, @ = 4, # = 5, +RSUB = 6, BASE = 7, RESW = 8, RESB = 9, 
+        WORD = 10, BYTE = 11, START = 12, END = 13, COMA = 14, INSTR1 = 15, INSTR2_r1r2 = 16, 
+        INSTR2_r1 = 17, INSTR2_r1n = 18, INSTR2_n = 19, INSTR3 = 20, INSTR4 = 21, FINL = 22, 
+        REG = 23, NUMDEC = 24, NUMHEX_sh = 25, NUMHEX = 26, TEXT = 27, CONSTHEX = 28, CONSTCAD = 29;
+        */
+
+        //  INSTRUCCIONES / DIRECTIVAS
+        /* 7 a 11 son directivas "operadores", Start es 12 y end es 13*/
+        /* 15 a 21 son instrucciones de formatos que varian*/
+
         private void Paso1()
         {
             int ContadorPrograma = 0; //CP,PC
@@ -125,29 +136,6 @@ namespace SICXE_DeanHernandez
                 r.CreateCells(dGV_int);                                     //Crea las celdas en el nuevo row de acuerdo a las columnas existentes en el datagridview que le pasas
                 r.Cells[0].Value = i;                                       //La primera celda toma el valor de linea actual
                 r.Cells[2].Value = Convert.ToString(ContadorPrograma, 16);  //La tercera celda toma el valor del CP, convierte el decimal en hexadecimal
-
-                // Codigos lexicos
-                /* ",X" = 1, ", X" = 2, RSUB = 3, @ = 4, # = 5, +RSUB = 6, BASE = 7, RESW = 8, RESB = 9, 
-		        WORD = 10, BYTE = 11, START = 12, END = 13, COMA = 14, INSTR1 = 15, INSTR2_r1r2 = 16, 
-		        INSTR2_r1 = 17, INSTR2_r1n = 18, INSTR2_n = 19, INSTR3 = 20, INSTR4 = 21, FINL = 22, 
-		        REG = 23, NUMDEC = 24, NUMHEX_sh = 25, NUMHEX = 26, TEXT = 27, CONSTHEX = 28, CONSTCAD = 29;
-                */
-
-                //  INSTRUCCIONES / DIRECTIVAS
-                /* 7 a 11 son directivas "operadores", Start es 12 y end es 13*/
-                /* 15 a 21 son instrucciones de formatos que varian*/
-
-
-                //MessageBox.Show(parseTree.ToStringTree());
-                //int syntax = parseTree.SourceInterval.Length;
-                //MessageBox.Show(tokens.GetTokens + ' ' + syntax);
-
-                /*foreach (IToken token in t)
-                    {
-                        MessageBox.Show(token.ToString() + token.Type);
-                    }*/
-
-                //MessageBox.Show(t[0].Type.ToString());
                 
                 if (i == 0)
                 {
@@ -168,7 +156,19 @@ namespace SICXE_DeanHernandez
                         r.Cells[4].Value = t[1].Text;
                         List<String> op = RegresarOperandos(t);
                         if (op.Count == 1)
+                        {
                             r.Cells[5].Value = op[0];
+                            String num = r.Cells[5].Value.ToString();
+                            if (num.Last() == 'h' || num.Last() == 'H')
+                            {
+                                num = num.Remove(num.Length - 1, 1);//Remover letra
+                                ContadorPrograma += Convert.ToInt32(num, 16);
+                            }
+                            else
+                            {
+                                ContadorPrograma += Int32.Parse(r.Cells[5].Value.ToString());
+                            }
+                        }
                     }
                 }
                 else if( i == codigo.Count - 1)
@@ -206,7 +206,7 @@ namespace SICXE_DeanHernandez
                             DataGridViewRow rs = new DataGridViewRow();
                             rs.CreateCells(dGV_Sim);                    //Crea las celdas en el nuevo row de acuerdo a las columnas existentes en el datagridview que le pasas
                             rs.Cells[0].Value = t[0].Text;
-                            rs.Cells[1].Value = Convert.ToString(ContadorPrograma, 16);
+                            rs.Cells[1].Value = Convert.ToString(ContadorPrograma, 16); //Convertir decimal a hexadecimal
                             dGV_Sim.Rows.Add(rs);                       //Agregar renglon en tabla datagridView de Archivo intermedio
                         }
                         else
@@ -234,9 +234,9 @@ namespace SICXE_DeanHernandez
                     if(r.Cells[4].Value.ToString().Contains("RSUB") || r.Cells[4].Value.ToString().Contains("+RSUB"))
                     {
                         if(r.Cells[5].Value == null)
-                            r.Cells[6].Value = "Simple";
+                            r.Cells[6].Value = "---";
                         else if(r.Cells[5].Value.ToString() == "")
-                            r.Cells[6].Value = "Simple";
+                            r.Cells[6].Value = "---";
                         else
                             r.Cells[6].Value = "Error: Sintaxis";
                     }
