@@ -39,6 +39,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label_TamPrograma = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dGV_int = new System.Windows.Forms.DataGridView();
             this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,8 +69,8 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label_TamPrograma = new System.Windows.Forms.Label();
+            this.label_TamPrograma_2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -188,6 +190,24 @@
             this.tabPage2.Text = "Entrega 3";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label_TamPrograma
+            // 
+            this.label_TamPrograma.AutoSize = true;
+            this.label_TamPrograma.Location = new System.Drawing.Point(116, 385);
+            this.label_TamPrograma.Name = "label_TamPrograma";
+            this.label_TamPrograma.Size = new System.Drawing.Size(21, 13);
+            this.label_TamPrograma.TabIndex = 5;
+            this.label_TamPrograma.Text = "0H";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(4, 385);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(116, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Tamaño del programa: ";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -301,6 +321,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label_TamPrograma_2);
+            this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Controls.Add(this.label4);
@@ -417,7 +439,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(7, 34);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(243, 364);
+            this.dataGridView2.Size = new System.Drawing.Size(243, 338);
             this.dataGridView2.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn8
@@ -432,23 +454,23 @@
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
-            // label5
+            // label_TamPrograma_2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 385);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Tamaño del programa: ";
+            this.label_TamPrograma_2.AutoSize = true;
+            this.label_TamPrograma_2.Location = new System.Drawing.Point(117, 385);
+            this.label_TamPrograma_2.Name = "label_TamPrograma_2";
+            this.label_TamPrograma_2.Size = new System.Drawing.Size(21, 13);
+            this.label_TamPrograma_2.TabIndex = 9;
+            this.label_TamPrograma_2.Text = "0H";
             // 
-            // label_TamPrograma
+            // label7
             // 
-            this.label_TamPrograma.AutoSize = true;
-            this.label_TamPrograma.Location = new System.Drawing.Point(116, 385);
-            this.label_TamPrograma.Name = "label_TamPrograma";
-            this.label_TamPrograma.Size = new System.Drawing.Size(21, 13);
-            this.label_TamPrograma.TabIndex = 5;
-            this.label_TamPrograma.Text = "0H";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(5, 385);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(116, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Tamaño del programa: ";
             // 
             // SICXE
             // 
@@ -519,6 +541,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MODO;
         private System.Windows.Forms.Label label_TamPrograma;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label_TamPrograma_2;
+        private System.Windows.Forms.Label label7;
     }
 }
 

@@ -36,9 +36,9 @@ simple3    	:    	INSTR3 (TEXT|num) (',X'|', X')? | 'RSUB';
 indirecto3	:    	INSTR3 '@'num | INSTR3 '@'TEXT;
 inmediato3	:    	INSTR3 '#'num | INSTR3 '#'TEXT;
 
-simple4    	:    	INSTR4 TEXT (',X'|', X')? | '+RSUB';
-indirecto4	:    	INSTR4 '@'TEXT;
-inmediato4	:    	INSTR4 '#'TEXT;
+simple4    	:    	INSTR4 (TEXT|num) (',X'|', X')? | '+RSUB';
+indirecto4	:    	INSTR4 '@'TEXT | INSTR4 '@'num;
+inmediato4	:    	INSTR4 '#'TEXT | INSTR4 '@'num;
 //Tipos de entrada
 num			:	NUMDEC | NUMHEX;
 etiqueta	:   TEXT;

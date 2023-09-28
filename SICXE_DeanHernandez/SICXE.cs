@@ -113,7 +113,7 @@ namespace SICXE_DeanHernandez
         /* ",X" = 1, ", X" = 2, RSUB = 3, @ = 4, # = 5, +RSUB = 6, BASE = 7, RESW = 8, RESB = 9, 
         WORD = 10, BYTE = 11, START = 12, END = 13, COMA = 14, INSTR1 = 15, INSTR2_r1r2 = 16, 
         INSTR2_r1 = 17, INSTR2_r1n = 18, INSTR2_n = 19, INSTR3 = 20, INSTR4 = 21, FINL = 22, 
-        REG = 23, NUMDEC = 24, NUMHEX_sh = 25, NUMHEX = 26, TEXT = 27, CONSTHEX = 28, CONSTCAD = 29;
+        REG = 23, NUMDEC = 24, TEXT = 25, NUMHEX_sh = 26, NUMHEX = 27, CONSTHEX = 28, CONSTCAD = 29;
         */
 
         //  INSTRUCCIONES / DIRECTIVAS
@@ -357,6 +357,7 @@ namespace SICXE_DeanHernandez
             }
             //Actualizar Tamaño del programa como ultimo paso a considerar
             label_TamPrograma.Text = Convert.ToString(ContadorPrograma, 16) + 'H';
+            label_TamPrograma_2.Text = Convert.ToString(ContadorPrograma, 16) + 'H';
         }
 
         String RegresarFormato(IList<IToken> t)
