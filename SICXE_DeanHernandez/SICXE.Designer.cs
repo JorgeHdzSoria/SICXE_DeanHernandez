@@ -41,6 +41,13 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.dGV_int = new System.Windows.Forms.DataGridView();
+            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Formato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ETQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OPER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MODO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.dGV_Sim = new System.Windows.Forms.DataGridView();
             this.Simbolo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,10 +55,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,13 +63,12 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ERR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Formato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ETQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OPER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MODO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label_TamPrograma = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -172,6 +174,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label_TamPrograma);
+            this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.dGV_int);
             this.tabPage2.Controls.Add(this.label1);
@@ -212,6 +216,54 @@
             this.dGV_int.Size = new System.Drawing.Size(702, 364);
             this.dGV_int.TabIndex = 2;
             // 
+            // Num
+            // 
+            this.Num.HeaderText = "Num";
+            this.Num.Name = "Num";
+            this.Num.ReadOnly = true;
+            this.Num.Width = 50;
+            // 
+            // Formato
+            // 
+            this.Formato.HeaderText = "Formato";
+            this.Formato.Name = "Formato";
+            this.Formato.ReadOnly = true;
+            this.Formato.Width = 50;
+            // 
+            // CP
+            // 
+            this.CP.HeaderText = "CP";
+            this.CP.Name = "CP";
+            this.CP.ReadOnly = true;
+            this.CP.Width = 70;
+            // 
+            // ETQ
+            // 
+            this.ETQ.HeaderText = "ETQ";
+            this.ETQ.Name = "ETQ";
+            this.ETQ.ReadOnly = true;
+            this.ETQ.Width = 90;
+            // 
+            // INS
+            // 
+            this.INS.HeaderText = "INS";
+            this.INS.Name = "INS";
+            this.INS.ReadOnly = true;
+            this.INS.Width = 80;
+            // 
+            // OPER
+            // 
+            this.OPER.HeaderText = "OPER";
+            this.OPER.Name = "OPER";
+            this.OPER.ReadOnly = true;
+            // 
+            // MODO
+            // 
+            this.MODO.HeaderText = "MODO";
+            this.MODO.Name = "MODO";
+            this.MODO.ReadOnly = true;
+            this.MODO.Width = 218;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -232,7 +284,7 @@
             this.dGV_Sim.Location = new System.Drawing.Point(7, 34);
             this.dGV_Sim.Name = "dGV_Sim";
             this.dGV_Sim.ReadOnly = true;
-            this.dGV_Sim.Size = new System.Drawing.Size(243, 364);
+            this.dGV_Sim.Size = new System.Drawing.Size(243, 337);
             this.dGV_Sim.TabIndex = 0;
             // 
             // Simbolo
@@ -290,41 +342,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(702, 364);
             this.dataGridView1.TabIndex = 6;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(81, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Tabla de Simbolos";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
-            this.dataGridView2.Location = new System.Drawing.Point(7, 34);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(243, 364);
-            this.dataGridView2.TabIndex = 4;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Símbolo";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "Dirección";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Num";
@@ -380,53 +397,58 @@
             this.ERR.ReadOnly = true;
             this.ERR.Width = 114;
             // 
-            // Num
+            // label4
             // 
-            this.Num.HeaderText = "Num";
-            this.Num.Name = "Num";
-            this.Num.ReadOnly = true;
-            this.Num.Width = 50;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(81, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Tabla de Simbolos";
             // 
-            // Formato
+            // dataGridView2
             // 
-            this.Formato.HeaderText = "Formato";
-            this.Formato.Name = "Formato";
-            this.Formato.ReadOnly = true;
-            this.Formato.Width = 50;
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+            this.dataGridView2.Location = new System.Drawing.Point(7, 34);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(243, 364);
+            this.dataGridView2.TabIndex = 4;
             // 
-            // CP
+            // dataGridViewTextBoxColumn8
             // 
-            this.CP.HeaderText = "CP";
-            this.CP.Name = "CP";
-            this.CP.ReadOnly = true;
-            this.CP.Width = 70;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Símbolo";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
-            // ETQ
+            // dataGridViewTextBoxColumn9
             // 
-            this.ETQ.HeaderText = "ETQ";
-            this.ETQ.Name = "ETQ";
-            this.ETQ.ReadOnly = true;
-            this.ETQ.Width = 90;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Dirección";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
-            // INS
+            // label5
             // 
-            this.INS.HeaderText = "INS";
-            this.INS.Name = "INS";
-            this.INS.ReadOnly = true;
-            this.INS.Width = 80;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(4, 385);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(116, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Tamaño del programa: ";
             // 
-            // OPER
+            // label_TamPrograma
             // 
-            this.OPER.HeaderText = "OPER";
-            this.OPER.Name = "OPER";
-            this.OPER.ReadOnly = true;
-            // 
-            // MODO
-            // 
-            this.MODO.HeaderText = "MODO";
-            this.MODO.Name = "MODO";
-            this.MODO.ReadOnly = true;
-            this.MODO.Width = 218;
+            this.label_TamPrograma.AutoSize = true;
+            this.label_TamPrograma.Location = new System.Drawing.Point(116, 385);
+            this.label_TamPrograma.Name = "label_TamPrograma";
+            this.label_TamPrograma.Size = new System.Drawing.Size(21, 13);
+            this.label_TamPrograma.TabIndex = 5;
+            this.label_TamPrograma.Text = "0H";
             // 
             // SICXE
             // 
@@ -495,6 +517,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn INS;
         private System.Windows.Forms.DataGridViewTextBoxColumn OPER;
         private System.Windows.Forms.DataGridViewTextBoxColumn MODO;
+        private System.Windows.Forms.Label label_TamPrograma;
+        private System.Windows.Forms.Label label5;
     }
 }
 

@@ -117,4 +117,3 @@ C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debu
 C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.exe
 C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.pdb
 C:\Users\Lepo-lap\Desktop\SICXE\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csprojAssemblyReference.cache
-E:\Backup NVME\Documents\Tareas 9no Semestre\Laboratorio de Software de Sistemas\repositorio\SICXE_DeanHernandez\SICXE_DeanHernandez\obj\Debug\SICXE_DeanHernandez.csprojAssemblyReference.cache

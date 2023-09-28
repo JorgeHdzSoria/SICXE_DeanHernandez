@@ -76,8 +76,8 @@ INSTR4		:	'+'('ADD'|'ADDF'|'AND'|'COMP'|'COMPF'|'DIV'|'DIVF'|'J'|'JEQ'|'JGT'|'JL
 FINL 			:	('\r\n')+ | ('\n')+;
 REG            	: 	'A'|'X'|'L'|'B'|'S'|'T'|'F'|'CP'|'PC'|'SW';
 NUMDEC          : 	('0'..'9')+;
+TEXT			:	('a'..'z'|'A'..'Z')('0'..'9'|'a'..'z'|'A'..'Z')*;	//Representa la parte de ID (una etiqueta) y una cadena
 NUMHEX_sh		:	(NUMDEC|'A'..'F')+;
 NUMHEX          : 	('0'..'9'|'A'..'F')+('H' | 'h');
-TEXT			:	('a'..'z'|'A'..'Z')('0'..'9'|'a'..'z'|'A'..'Z')*;	//Representa la parte de ID (una etiqueta) y una cadena
 CONSTHEX       	: 	'X\''NUMHEX_sh'\'';
 CONSTCAD       	: 	'C\''TEXT'\''; 						//Debe iniciar con letra

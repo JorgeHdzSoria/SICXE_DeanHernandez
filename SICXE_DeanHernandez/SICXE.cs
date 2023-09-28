@@ -144,7 +144,7 @@ namespace SICXE_DeanHernandez
                     r.Cells[6].Value = "---";
                     
                     IList<IToken> t = tokens.GetTokens();
-                    if (t[0].Type.ToString() == "27")
+                    if (t[0].Type.ToString() == "25")
                         r.Cells[3].Value = t[0].Text;
 
                     if (ListaErrores.Count > 0)
@@ -199,7 +199,7 @@ namespace SICXE_DeanHernandez
                     r.Cells[6].Value = "---";
                     IList<IToken> t = tokens.GetTokens();               // Obtener todos los tokens
                     bool ErrorSimboloDuplicado = false;
-                    if (t[0].Type.ToString() == "27")                   // Identificar si el primer token es etiqueta y lo agrega a la columan ETIQ
+                    if (t[0].Type.ToString() == "25")                   // Identificar si el primer token es etiqueta y lo agrega a la columan ETIQ
                     {
                         r.Cells[3].Value = t[0].Text;
                         if (TabSim.ContainsKey(t[0].Text))
@@ -267,7 +267,7 @@ namespace SICXE_DeanHernandez
                     else
                     {
                         //Si no existe algun tipo de error y hay etiqueta al inicio del programa lo debe meter al TabSim y dGV_Sim
-                        if (t[0].Type.ToString() == "27")                                   // Identificar si el primer token es etiqueta y lo agrega a la columan ETIQ
+                        if (t[0].Type.ToString() == "25")                                   // Identificar si el primer token es etiqueta y lo agrega a la columan ETIQ
                         {
                                 TabSim.Add(t[0].Text, ContadorPrograma.ToString());         //En tabSim agregar el numero en decimal, pero en la interfaz visual se agrega como hexadecimal
                                 DataGridViewRow rs = new DataGridViewRow();
@@ -355,6 +355,8 @@ namespace SICXE_DeanHernandez
                 }
                 dGV_int.Rows.Add(r);    //Agregar renglon en tabla datagridView de Archivo intermedio
             }
+            //Actualizar Tamaño del programa como ultimo paso a considerar
+            label_TamPrograma.Text = Convert.ToString(ContadorPrograma, 16) + 'H';
         }
 
         String RegresarFormato(IList<IToken> t)
