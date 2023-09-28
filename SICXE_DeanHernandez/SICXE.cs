@@ -150,6 +150,7 @@ namespace SICXE_DeanHernandez
                     if (ListaErrores.Count > 0)
                     {
                         r.Cells[6].Value = "Error: Sintaxis";
+                        r.Cells[6].Style.ForeColor = System.Drawing.Color.Red;
                     }
                     else
                     {
@@ -181,6 +182,7 @@ namespace SICXE_DeanHernandez
                     if (ListaErrores.Count > 0)
                     {
                         r.Cells[6].Value = "Error: Sintaxis";
+                        r.Cells[6].Style.ForeColor = System.Drawing.Color.Red;
                     }
                     else
                     {
@@ -193,23 +195,14 @@ namespace SICXE_DeanHernandez
                 }
                 else
                 {
-                    r.Cells[6].Value = "---";
                     IParseTree parseTree = parser.proposicion();        // Verifica si pertenece a proposicion
+                    r.Cells[6].Value = "---";
                     IList<IToken> t = tokens.GetTokens();               // Obtener todos los tokens
                     bool ErrorSimboloDuplicado = false;
                     if (t[0].Type.ToString() == "27")                   // Identificar si el primer token es etiqueta y lo agrega a la columan ETIQ
                     {
                         r.Cells[3].Value = t[0].Text;
-                        if (!TabSim.ContainsKey(t[0].Text))
-                        {
-                            TabSim.Add(t[0].Text, ContadorPrograma.ToString());
-                            DataGridViewRow rs = new DataGridViewRow();
-                            rs.CreateCells(dGV_Sim);                    //Crea las celdas en el nuevo row de acuerdo a las columnas existentes en el datagridview que le pasas
-                            rs.Cells[0].Value = t[0].Text;
-                            rs.Cells[1].Value = Convert.ToString(ContadorPrograma, 16); //Convertir decimal a hexadecimal
-                            dGV_Sim.Rows.Add(rs);                       //Agregar renglon en tabla datagridView de Archivo intermedio
-                        }
-                        else
+                        if (TabSim.ContainsKey(t[0].Text))
                             ErrorSimboloDuplicado = true;               //No debe insertarse en tabla de sim y da error en la linea
                     }
 
@@ -238,7 +231,10 @@ namespace SICXE_DeanHernandez
                         else if(r.Cells[5].Value.ToString() == "")
                             r.Cells[6].Value = "---";
                         else
+                        {
                             r.Cells[6].Value = "Error: Sintaxis";
+                            r.Cells[6].Style.ForeColor = System.Drawing.Color.Red;
+                        } 
                     }
 
                     //Tratar con operandos en formato 1, dar error
@@ -247,23 +243,43 @@ namespace SICXE_DeanHernandez
                         if (r.Cells[5].Value != null)
                         {
                             if (r.Cells[5].Value.ToString() != "")
+                            {
                                 r.Cells[6].Value = "Error: Sintaxis";
+                                r.Cells[6].Style.ForeColor = System.Drawing.Color.Red;
+                            }
                         }
                     }
 
-                    //Tratar con errores
+                    //Tratar con errores e insercion de simbolo en TabSim
                     if (ListaErrores.Count > 0)
                     {
                         if (r.Cells[4].Value.ToString() == "Error")
                             r.Cells[6].Value = "Error: Instruccion no existe";
                         else
                             r.Cells[6].Value = "Error: Sintaxis";
+                        r.Cells[6].Style.ForeColor = System.Drawing.Color.Red;
                     }
-                    else if(ErrorSimboloDuplicado)
+                    else if (ErrorSimboloDuplicado)
+                    {
                         r.Cells[6].Value = "Error: Simbolo Duplicado";
+                        r.Cells[6].Style.ForeColor = System.Drawing.Color.Red;
+                    }
+                    else
+                    {
+                        //Si no existe algun tipo de error y hay etiqueta al inicio del programa lo debe meter al TabSim y dGV_Sim
+                        if (t[0].Type.ToString() == "27")                                   // Identificar si el primer token es etiqueta y lo agrega a la columan ETIQ
+                        {
+                                TabSim.Add(t[0].Text, ContadorPrograma.ToString());         //En tabSim agregar el numero en decimal, pero en la interfaz visual se agrega como hexadecimal
+                                DataGridViewRow rs = new DataGridViewRow();
+                                rs.CreateCells(dGV_Sim);                                    //Crea las celdas en el nuevo row de acuerdo a las columnas existentes en el datagridview que le pasas
+                                rs.Cells[0].Value = t[0].Text;
+                                rs.Cells[1].Value = Convert.ToString(ContadorPrograma, 16); //Convertir decimal a hexadecimal
+                                dGV_Sim.Rows.Add(rs);                                       //Agregar renglon en tabla datagridView de Archivo intermedio
+                        }
+                    }
 
                     //Incremento de CP para formato 1-4 y directivas
-                    if(!(r.Cells[1].Value.ToString() == "Error" || r.Cells[6].Value.ToString() == "Error: Sintaxis" || r.Cells[1].Value.ToString() == "Error: Instruccion no existe"))
+                    if(!(r.Cells[1].Value.ToString() == "Error" || r.Cells[6].Value.ToString() == "Error: Sintaxis" || r.Cells[6].Value.ToString() == "Error: Instruccion no existe"))
                     {
                         switch (r.Cells[1].Value.ToString())
                         {
@@ -415,6 +431,10 @@ namespace SICXE_DeanHernandez
             }
             return Operandos;
         }
+
+        #endregion
+
+        #region Entrega 4
 
         #endregion
     }
