@@ -56,7 +56,7 @@
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dGV_int_2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +66,7 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ERR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dGV_Sim_2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label_TamPrograma_2 = new System.Windows.Forms.Label();
@@ -78,8 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGV_int)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Sim)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_int_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_Sim_2)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -324,9 +324,9 @@
             this.tabPage3.Controls.Add(this.label_TamPrograma_2);
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Controls.Add(this.dGV_int_2);
             this.tabPage3.Controls.Add(this.label4);
-            this.tabPage3.Controls.Add(this.dataGridView2);
+            this.tabPage3.Controls.Add(this.dGV_Sim_2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -344,12 +344,12 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Archivo Intermedio: CONT. LOC + CODIGO FUENTE + CODIGO OBJETO+ERRORES";
             // 
-            // dataGridView1
+            // dGV_int_2
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dGV_int_2.AllowUserToAddRows = false;
+            this.dGV_int_2.AllowUserToDeleteRows = false;
+            this.dGV_int_2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_int_2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -358,11 +358,11 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.ERR});
-            this.dataGridView1.Location = new System.Drawing.Point(257, 34);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(702, 364);
-            this.dataGridView1.TabIndex = 6;
+            this.dGV_int_2.Location = new System.Drawing.Point(257, 34);
+            this.dGV_int_2.Name = "dGV_int_2";
+            this.dGV_int_2.ReadOnly = true;
+            this.dGV_int_2.Size = new System.Drawing.Size(702, 364);
+            this.dGV_int_2.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -428,19 +428,19 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Tabla de Simbolos";
             // 
-            // dataGridView2
+            // dGV_Sim_2
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dGV_Sim_2.AllowUserToAddRows = false;
+            this.dGV_Sim_2.AllowUserToDeleteRows = false;
+            this.dGV_Sim_2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_Sim_2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
-            this.dataGridView2.Location = new System.Drawing.Point(7, 34);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(243, 338);
-            this.dataGridView2.TabIndex = 4;
+            this.dGV_Sim_2.Location = new System.Drawing.Point(7, 34);
+            this.dGV_Sim_2.Name = "dGV_Sim_2";
+            this.dGV_Sim_2.ReadOnly = true;
+            this.dGV_Sim_2.Size = new System.Drawing.Size(243, 338);
+            this.dGV_Sim_2.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -457,7 +457,7 @@
             // label_TamPrograma_2
             // 
             this.label_TamPrograma_2.AutoSize = true;
-            this.label_TamPrograma_2.Location = new System.Drawing.Point(117, 385);
+            this.label_TamPrograma_2.Location = new System.Drawing.Point(116, 385);
             this.label_TamPrograma_2.Name = "label_TamPrograma_2";
             this.label_TamPrograma_2.Size = new System.Drawing.Size(21, 13);
             this.label_TamPrograma_2.TabIndex = 9;
@@ -466,7 +466,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(5, 385);
+            this.label7.Location = new System.Drawing.Point(4, 385);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 13);
             this.label7.TabIndex = 8;
@@ -492,8 +492,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Sim)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_int_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_Sim_2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,7 +519,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dGV_int_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -529,7 +529,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn ERR;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dGV_Sim_2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Num;

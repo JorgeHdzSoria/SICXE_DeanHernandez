@@ -14,7 +14,6 @@ namespace SICXE_DeanHernandez
         String Archivo;
         List<List<String>> codigo; //Lista de lista de strings, el primer string de cada lista (dentro del conjunto de listas) es la linea original de codigo, lo que le siguen son tokens
         public static List<string> ListaErrores = new List<string>();
-        //HashSet<string> Set_TabSim;
         Dictionary<String, String> TabSim;
 
         public SICXE()
@@ -50,6 +49,8 @@ namespace SICXE_DeanHernandez
             textBox_errores.Text = "";                              //Reiniciar textbox de errores
             dGV_Sim.Rows.Clear();
             dGV_int.Rows.Clear();
+            dGV_Sim_2.Rows.Clear();
+            dGV_int_2.Rows.Clear();
             TabSim = new Dictionary<string, string>();
 
             codigo = new List<List<String>>();                      //En la lista de codigo agrega todo uno por uno para su uso mas adelante en paso 1
@@ -358,6 +359,8 @@ namespace SICXE_DeanHernandez
             //Actualizar Tamaño del programa como ultimo paso a considerar
             label_TamPrograma.Text = Convert.ToString(ContadorPrograma, 16) + 'H';
             label_TamPrograma_2.Text = Convert.ToString(ContadorPrograma, 16) + 'H';
+
+            Paso2(); //Iniciar paso 2 / Entrega 4
         }
 
         String RegresarFormato(IList<IToken> t)
@@ -438,7 +441,122 @@ namespace SICXE_DeanHernandez
         #endregion
 
         #region Entrega 4
+        private void Paso2()
+        {
+            //Tabla de codigos operacionales
+            Dictionary<String, String> CodOp = new Dictionary<String, String>
+            {
+                {"ADD","18"},{"ADDF","58"},{"ADDR","90"},{"AND","40"},{"CLEAR","B4"},{"COMP","28"},{"COMPF","88"},{"COMPR","A0"},{"DIV","24"},{"DIVF","64"},
+                {"DIVR","9C"},{"FIX","C4"},{"FLOAT","C0"},{"HIO","F4"},{"J","3C"},{"JEQ","30"},{"JGT","34"},{"JLT","38"},{"JSUB","48"},{"LDA","00"},
+                {"LDB","68"},{"LDCH","50"},{"LDF","70"},{"LDL","08"},{"LDS","6C"},{"LDT","74"},{"LDX","04"},{"LPS","D0"},{"MUL","20"},{"MULF","60"},
+                {"MULR","98"},{"NORM","C8"},{"OR","44"},{"RD","D8"},{"RMO","AC"},{"RSUB","4C"},{"SHIFTL","A4"},{"SHIFTR","A8"},{"SIO","F0"},{"SSK","EC"},
+                {"STA","0C"},{"STB","78"},{"STCH","54"},{"STF","80"},{"STI","D4"},{"STL","14"},{"STS","7C"},{"STSW","E8"},{"STT","84"},{"STX","10"},
+                {"SUB","1C"},{"SUBF","5C"},{"SUBR","94"},{"SVC","B0"},{"TD","E0"},{"TIO","F8"},{"TIX","2C"},{"TIXR","B8"},{"WD","DC"}
+            };
 
+            Dictionary<String, String> Registros = new Dictionary<string, string>
+            {
+                {"A","0"},{"X","1"},{"L","2"},{"B","3"},{"S","4"},{"T","5"},{"F","6"},{"CP","8"},{"PC","8"},{"SW","9"}
+            };
+            
+
+            //Copiar y pegar contenido de tabla intermedio del paso 1 en el 2
+            foreach(DataGridViewRow row in dGV_int.Rows)
+            {
+                DataGridViewRow r = new DataGridViewRow();
+                r.CreateCells(dGV_int_2);
+                for (int i = 0; i < 6; i++)
+                    r.Cells[i].Value = row.Cells[i].Value;
+
+                if (row.Cells[6].Value.ToString().Contains("Error"))
+                {
+                    //Ignora si es error de tipo de simbolo duplicado, pero los otros 2 los toma en cuenta para no hacer Codigo Objeto
+                    if (!row.Cells[6].Value.ToString().Contains("Error: Simbolo Duplicado"))
+                    {
+                        r.Cells[7].Value = row.Cells[6].Value;
+                        r.Cells[7].Style.ForeColor = System.Drawing.Color.Red;
+                    }
+                }
+                else
+                    r.Cells[7].Value = "";
+                dGV_int_2.Rows.Add(r);
+            }
+            //Copiar y pegar contenido de tabla Sim del paso 1 en el 2
+            foreach (DataGridViewRow row in dGV_Sim.Rows)
+            {
+                DataGridViewRow r = new DataGridViewRow();
+                r.CreateCells(dGV_Sim);
+                for (int i = 0; i < 2; i++)
+                    r.Cells[i].Value = row.Cells[i].Value;
+                dGV_Sim_2.Rows.Add(r);
+            }
+
+            int renglon = 0; //Conteo de renglones para pasar como parametro
+            //Inicio de creacion codigo objeto
+            foreach(DataGridViewRow row in dGV_int_2.Rows)
+            {
+                //Si hay un error de instruccion o sintaxis anteriormente se lo salta
+                if (row.Cells[7].Value.ToString().Contains("Error"))
+                    row.Cells[6].Value = "---";
+                else
+                {
+                    //Filtrar por formato o directiva
+                    switch(row.Cells[1].Value)
+                    {
+                        case "1":
+                            CodigoObjeto_Formato1(CodOp,renglon,row.Cells[4].Value.ToString());
+                            break;
+                        case "2":
+                            CodigoObjeto_Formato2(CodOp,Registros,renglon,row.Cells[4].Value.ToString(), row.Cells[5].Value.ToString());
+                            break;
+                        case "3":
+                            CodigoObjeto_Formato3();
+                            break;
+                        case "4":
+                            CodigoObjeto_Formato4();
+                            break;
+                        case "---":
+                            CodigoObjeto_Directiva();
+                            break;
+                    }
+                }
+                renglon++; //Siguiente renglon en tabla
+            }
+        }
+
+        private void CodigoObjeto_Formato1(Dictionary<String,String> d, int renglon, String instruccion)
+        {
+            dGV_int_2.Rows[renglon].Cells[6].Value = d[instruccion];
+        }
+
+        private void CodigoObjeto_Formato2(Dictionary<String, String> d, Dictionary<String, String> reg, int renglon, String instruccion, String Operandos)
+        {
+            String conc = "";
+            String[] op = Operandos.Split(',');
+            foreach (String o in op)
+            {
+                if (reg.ContainsKey(o.Trim()))
+                    conc += reg[o.Trim()];
+                else
+                    conc += Convert.ToString(Convert.ToInt32(o.Trim(), 16) - 1, 16);
+            }
+            dGV_int_2.Rows[renglon].Cells[6].Value = d[instruccion]+conc;
+        }
+
+        private void CodigoObjeto_Formato3()
+        {
+
+        }
+
+        private void CodigoObjeto_Formato4()
+        {
+
+        }
+
+        private void CodigoObjeto_Directiva()
+        {
+
+        }
         #endregion
     }
 }
